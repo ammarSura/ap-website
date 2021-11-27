@@ -7,9 +7,7 @@ import ProductCardCounterComp from './product-card-counter';
 
 // export default class ProductCardComp extends Component {
 export default function ProductCardComp (props) {
-    // state = {
-    //   link : '/product/' + this.props.id,
-    // } 
+    
     const [ link, setLink ] = useState(null);
     const [ isLoaded, setLoading ] = useState(false);
 

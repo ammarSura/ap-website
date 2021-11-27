@@ -4,10 +4,10 @@ import { Card, Button} from "react-bootstrap";
 import "../App.css";
 
 
-async function addToCart(user_id, product_id, count) {
+async function removeFromCart(user_id, product_id, count) {
    
     
-    await fetch('/addToCart', {
+    await fetch('/removeFromCart', {
         
         method: 'POST',
         body: JSON.stringify(
@@ -27,7 +27,7 @@ async function addToCart(user_id, product_id, count) {
 async function updateCart(user_id, product_id, count) {
    
     
-    await fetch('/addToCart', {
+    await fetch('/updateCart', {
         
         method: 'POST',
         body: JSON.stringify(
@@ -69,7 +69,13 @@ export default function ProductCardCounterComp (props) {
             //     setOriginalCount(count);
             // } else 
             // updateCart('ammarsura@gmail.com', props.id, count);
-            addToCart('ammarsura@gmail.com', props.id, count);
+            if (count <= 0 ) {
+                console.log('zeroed', count)
+                removeFromCart('ammarsura@gmail.com', props.id, count);
+            } else {
+                updateCart('ammarsura@gmail.com', props.id, count);
+            }
+            
             setPrevCount(count);
         }
        
@@ -88,7 +94,7 @@ export default function ProductCardCounterComp (props) {
         return (
             <div>
                 <Button onClick={() => setCount(count + 1)}>+</Button>
-                <h3>{String(count)}</h3>
+                <h3>{count}</h3>
                 <Button onClick={() => setCount(count - 1)}>-</Button>
             </div>
             

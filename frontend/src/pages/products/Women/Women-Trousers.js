@@ -26,17 +26,20 @@ export default function WomenTrousers() {
     cart = result.cart;
     });
 
-    for (let i = 0; i < cart.length; i++) {
-      var c = cart[i];
-      for (let j = 0; j < products.length; j++) {
-        var p = products[j];
-        if (p._id === c.product_id) {
-          p.quantity = c.quantity;
-        } else {
-          p.quantity = 0;
-        } 
-      } 
+    for (let i = 0; i < products.length; i++) {
+      products[i].quantity = 0;
+      
     }
+
+    if (cart.length > 0) {
+      for (let i = 0; i < products.length; i++) {
+        for (let j = 0; j < cart.length; j++) {
+          if(cart[j].product_id === products[i]._id) {
+            products[i].quantity = cart[j].quantity;
+          } 
+        }
+      }
+    } 
     setProducts(products);
     setProductsLoading(true);
   }

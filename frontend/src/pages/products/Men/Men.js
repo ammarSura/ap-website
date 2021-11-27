@@ -26,24 +26,26 @@ export default function Men() {
     cart = result.cart;
     });
     
-    console.log('cart', cart.length);
+    console.log('cart', cart.length, cart);
     console.log('prod', products);
 
-    for (let i = 0; i < cart.length; i++) {
-      var c = cart[i];
-      for (let j = 0; j < products.length; j++) {
-        var p = products[j];
-        if (p._id === c.product_id) {
-          p.quantity = c.quantity;
-          console.log('as', p.quantity, c.quantity)
-        } else {
-          p.quantity = 0;
-          console.log(p.quantity);
-        }
-        
-      }
+   
+
+    for (let i = 0; i < products.length; i++) {
+      products[i].quantity = 0;
       
     }
+
+    if (cart.length > 0) {
+      for (let i = 0; i < products.length; i++) {
+        for (let j = 0; j < cart.length; j++) {
+          if(cart[j].product_id === products[i]._id) {
+            products[i].quantity = cart[j].quantity;
+          } 
+        }
+      }
+    } 
+
     setProducts(products);
     setProductsLoading(true);  
     console.log('prpr', products);  
@@ -51,12 +53,7 @@ export default function Men() {
 
   useEffect(() => {
     if ( productsLoaded === false ) {
-      // fetch('/search/gender/Men')
-      // .then(res => res.json())
-      // .then(result => {
-      //   setProducts(result);
-      //   setProductsLoading(true);
-      // });
+      
       fetcher();
     }
   });

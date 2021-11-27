@@ -1,11 +1,10 @@
 import React, { Component, useState, useEffect } from "react";
 import "../App.css";
-import ProductCardGroupComp from "../components/product-card-group";
+import ProductCardGroupComp from "./product-card-group";
 
 
 export default function ProductDisplayComp (props) {
 
-    const [ isLoaded, setLoading ] = useState(false);
     
   
     function looper() {
@@ -30,23 +29,16 @@ export default function ProductDisplayComp (props) {
     
 
     
-    if (isLoaded === true) {
-        // console.log(cart);
-       return (
-           <div>
-               
-               {looper()}
-           </div>
-       
-           
-        ); 
-    } else {
-        return(
-            <div>
-                <p>Loading...</p>
-            </div>
-        );
-    }
+  
+    return (
+        <div>
+            
+            {looper()}
+        </div>
+    
+        
+    ); 
+   
 
     
 } 
