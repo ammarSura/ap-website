@@ -28,6 +28,8 @@ import Wishlist from './pages/Wishlist';
 import UserDetails from './pages/UserDetails';
 // import Autocomplete from './util/searchie';
 import Autocomplete from './util/auto';
+import {CartProvider} from "./contexts/search-context";
+import SearchBar from './components/search-bar';
 
 
 
@@ -38,9 +40,10 @@ export default function App() {
     
     return (
       <div>
+        <CartProvider>
         <NavbarComp/> 
         
-  
+      
         <Routes> 
         
         <Route exact path="/" element={<Home />}/>
@@ -66,8 +69,10 @@ export default function App() {
         </Routes>
 
         <FooterComp />
+        </CartProvider> 
         
-        {/* <Autocomplete/> */}
+        
+        
         </div>
     );
 }

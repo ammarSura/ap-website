@@ -66,12 +66,6 @@ export default class AddressInput extends Component{
         document.getElementById("state").value = ' ';
         document.getElementById("country").value = ' ';
         
-        
-    
-    
-        
-        
-    
     }
    
     render(){

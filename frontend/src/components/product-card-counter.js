@@ -1,6 +1,7 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Card, Button} from "react-bootstrap";
+import { CartContext } from '../contexts/search-context';
 import "../App.css";
 
 
@@ -47,8 +48,7 @@ async function updateCart(user_id, product_id, count) {
 
 export default function ProductCardCounterComp (props) {
     
-    // const [ link, setLink ] = useState(null);
-    console.log('q', props.quantity);
+    const carter = useContext( CartContext );
     const [prevCount, setPrevCount ] = useState(props.quantity);
     const [ originalCount, setOriginalCount ] = useState(props.quantity);
     const [ count, setCount ] = useState(props.quantity);
@@ -61,21 +61,15 @@ export default function ProductCardCounterComp (props) {
 
     useEffect(() => {
       
-   
+        
         if(prevCount !== count) {
-            console.log('Changed!');
-            // if (originalCount === 0) {
-            //     addToCart('ammarsura@gmail.com', props.id, count)
-            //     setOriginalCount(count);
-            // } else 
-            // updateCart('ammarsura@gmail.com', props.id, count);
+            
             if (count <= 0 ) {
                 console.log('zeroed', count)
                 removeFromCart('ammarsura@gmail.com', props.id, count);
             } else {
                 updateCart('ammarsura@gmail.com', props.id, count);
             }
-            
             setPrevCount(count);
         }
        
@@ -85,19 +79,17 @@ export default function ProductCardCounterComp (props) {
     if (count === 0) {
         return (
             <div>
-                <Button onClick={() => setCount(count + 1) }>Add to Cart</Button>
-                {/* <Button>-</Button> */}
+                <Button style={{display:"block", width: "80%"}}onClick={() => setCount(count + 1) }>Add to Cart</Button>
             </div>
             
         );
     } else {
         return (
-            <div>
-                <Button onClick={() => setCount(count + 1)}>+</Button>
-                <h3>{count}</h3>
-                <Button onClick={() => setCount(count - 1)}>-</Button>
+            <div style={{display: "flex"}}>
+                <div><Button style={{marginLeft: "3em"}}onClick={() => setCount(count + 1)}>+</Button></div>
+                <div><h3 style={{paddingLeft: "1em", paddingRight: "1em"}}>{count}</h3></div>
+                <div><Button  onClick={() => setCount(count - 1)}>-</Button></div>
             </div>
-            
         );
     }
     

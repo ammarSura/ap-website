@@ -1,35 +1,40 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState, useEffect, useContext } from "react";
 import "../../../App.css";
 import ProductDisplayComp from '../../../components/product-display';
+import FilterBar from '../../../components/filter-bar';
+import { FilterProvider } from "../../../contexts/filter-context";
+import { CartContext } from "../../../contexts/search-context";
 
 
 
 export default function Women() {
+  
 
+  const carter = useContext( CartContext );
+  const [ cart, setCart ] = useState([]);
+  const [ cartIsLoaded, setCartLoading ] = useState(false);
+  const [ wishlist, setWishlist ] = useState([]);
+  const [ wishlistIsLoaded, setWishlistLoading ] = useState(false);
+  
+  
   const [ products, setProducts ] = useState([]);
   const [ productsLoaded, setProductsLoading ] = useState(false);
-
+  
+  
 
   async function fetcher() {
 
     var products;
-    var cart;
+    
     await fetch('/search/gender/Women')
     .then(res => res.json())
     .then(result => {
       products = result;
     });
-    
-    await fetch('/getCart/' + 'ammarsura@gmail.com' )
-    .then(res => res.json())
-    .then(result => {
-    cart = result.cart;
-    });
 
-    
     for (let i = 0; i < products.length; i++) {
       products[i].quantity = 0;
-      
+      products[i].wishlist = false;  
     }
 
     if (cart.length > 0) {
@@ -40,23 +45,42 @@ export default function Women() {
           } 
         }
       }
-    } 
+    }
+    
+    if (wishlist.length > 0) {
+      for (let i = 0; i < products.length; i++) {
+        for (let j = 0; j < wishlist.length; j++) {
+          if(wishlist[j].product_id === products[i]._id) {
+            products[i].wishlist = true;
+          }
+        }
+      }
+    }
+
     setProducts(products);
-    setProductsLoading(true);    
+    setProductsLoading(true);  
+    
   }
 
   useEffect(() => {
     if ( productsLoaded === false ) {
-      // fetch('/search/gender/Men')
-      // .then(res => res.json())
-      // .then(result => {
-      //   setProducts(result);
-      //   setProductsLoading(true);
-      // });
-      fetcher();
+      if ( cartIsLoaded && wishlistIsLoaded ) {
+        fetcher();
+      }
+      
     }
-  });
 
+    if ( !cartIsLoaded && !wishlistIsLoaded) {
+      setCartLoading(carter.cartIsLoaded);
+      setCart(carter.cart.cart);
+      setWishlistLoading(carter.wishlistIsLoaded);
+      setWishlist(carter.wishlist.wishlist);
+      // console.log(carter.wishlist.wishlist)
+    }
+
+    
+  });
+  
     
   if (productsLoaded === false) {
     return <div>Loading ... </div>;
@@ -64,7 +88,10 @@ export default function Women() {
     return (
       
           <div style={{marginTop: "15%"}}> 
+            <FilterProvider>
+              <FilterBar/>
               <ProductDisplayComp lst = {products}/>
+            </FilterProvider>
           </div>
           
     );

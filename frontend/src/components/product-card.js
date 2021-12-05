@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, Button} from "react-bootstrap";
 import "../App.css";
 import ProductCardCounterComp from './product-card-counter';
+import ProductCardWishlistComp from './product-card-wishlist';
 
 
 // export default class ProductCardComp extends Component {
@@ -27,18 +28,23 @@ export default function ProductCardComp (props) {
     if (isLoaded === true) {
       return (
        
-        <Card style={{width : "20em", height : "35em"}} >
+        <Card style={{width : "20em", height : "38em"}} >
             <Card.Img variant="top" src={props.image01} style = {{width:"15em", marginLeft: "auto", marginRight: "auto" ,marginTop:"10%"}}/>
+
             <Card.Body style={{height:"80px", marginLeft:"15%"}}>
-              <Card.Title onClick={() => Butter()} className="product-card-title" style={{cursor: "pointer"}}>{props.name}</Card.Title>
+
+              <Card.Title onClick={() => Butter()} className="product-card-title" style={{cursor: "pointer"}}>{props.name}
+              </Card.Title>
+
               <Card.Text className="product-card-text">
-                  {props.price}
-                  
+                  {props.price}  
               </Card.Text>
-              {/* <Button variant="secondary" >-</Button>
-              <Button variant="secondary" >+</Button>
-               */}
-               <ProductCardCounterComp id={props.id} quantity={props.quantity}/>
+              <div style={{display: "grid"}}>
+              <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/>
+
+              <ProductCardCounterComp id={props.id} quantity={props.quantity}/>
+              </div>
+
             </Card.Body>
         </Card>
       );

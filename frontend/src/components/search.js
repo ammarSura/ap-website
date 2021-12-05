@@ -1,44 +1,15 @@
-// import React, { Link, Component } from 'react';
 
 
-// import "../App.css";
-
-// async function Butter() {
-        
-//     const ass = await document.getElementById("myInput").value;
-    
-//     console.log(1, ass);
-
-//     window.location.replace('/results/'+ ass); 
-
-//     document.getElementById("myInput").value = ' ';
-    
-// }
-
-
-// export default class SearchBar extends Component {
-
-//     render() {
-//         return (
-//             <div>
-//                 <input type="text" placeholder="Search" id="myInput"/>
-//                 <button onClick={() => Butter()}>Search</button>    
-//             </div>
-//         );
-//     }
-        
-       
-// }
-
-import React, { Component, Fragment, useState, useEffect } from "react";
+import React, { Component, Fragment, useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import "../App.css";
+// import { SearchContext } from '../contexts/search-context';
 
 
 function SearchBar(props) {
   
-
+  // const searcher = useContext(SearchContext);
   const [ activeSuggestion, setActiveSuggestions ] = useState(0);
   const [ filteredSuggestions, setFilteredSuggestions ] = useState([]);
   const [ showSuggestions, setShowSuggestions ] = useState(false);
@@ -47,8 +18,10 @@ function SearchBar(props) {
 
   useEffect( () => {
     if (query) {
-        // console.log(query)
-        window.location.replace('/results/'+ String(document.getElementById('search'))); 
+        const term = document.getElementById('search').value;
+        window.location.replace('/results/' + term ); 
+        // searcher.setQuery(term)
+        // console.log(searcher.query);
     }
   })
 
@@ -59,10 +32,10 @@ function SearchBar(props) {
         "pants",
         "jeans",
         "hoodies",
-        "sweatshirts",
-        "cardigans",
-        "jackets",
-        "coats",
+        "sweatshirt",
+        "cardigan",
+        "jacket",
+        "coat",
         "accessories"
     ];
     setUserInput(e.currentTarget.value);

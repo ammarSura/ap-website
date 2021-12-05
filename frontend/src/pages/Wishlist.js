@@ -9,24 +9,28 @@ export default function Wishlist() {
   const [isLoaded, setLoading] = useState(false);
   
   useEffect(() =>  {
-  
-    fetch('/getWishlist/ammarsura@gmail.com')
-      .then(res => res.json())
-      .then(result => {
-        setProducts(result[0]);
-        setLoading(true);
+    if(!isLoaded) {
+      fetch('/getWishlist/ammarsura@gmail.com')
+        .then(res => res.json())
+        .then(result => {
+         setProducts(result);
+          setLoading(true);
+          console.log(result.wishlist)
       });
+    }
   });
+
 
 
  
     if (!isLoaded) {
       return <div>Loading ... </div>;
     } else {
-        console.log(products.wishlist)
+        // console.log(products.wishlist)
         return (
           <div style={{marginTop: "15%"}}> 
               <WishlistDisplayComp lst = {products.wishlist}/>
+              {/* <h1>{products.wishlist}</h1> */}
           </div>
       );
     }   

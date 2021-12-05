@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useContext } from "react";
 import {Link} from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -8,9 +8,10 @@ import { InputGroup, FormControl } from "react-bootstrap";
 import "../App.css";
 import {Check} from "../util/apis";
 import LoginButton from "./login-button";
-import SearchBar from "./search";
+import SearchBar from "./search-bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from './logout-button';
+import { CartContext } from '../contexts/search-context';
 
 
 
@@ -20,6 +21,7 @@ export default function NavbarComp() {
 
   const { user, isAuthenticated } = useAuth0();
   const [ db_state, setDbState ] = useState(false);
+  const carter = useContext( CartContext );
 
   if (isAuthenticated) {
     
@@ -82,8 +84,8 @@ export default function NavbarComp() {
             </NavDropdown>
           </Nav>
           <Nav style = {{ paddingTop: "17px", marginRight: "5%" }}>
-            
-            <SearchBar/>
+          
+          <SearchBar placeholder="Search"/>
             
           </Nav>
           <Nav style={{marginRight:"10%"}}>
@@ -96,7 +98,7 @@ export default function NavbarComp() {
 
             </Nav.Item>
             <Nav.Item style={{marginRight:"5%"}}><Link to="/wishlist">Favorites</Link></Nav.Item>
-            <Nav.Item style={{marginLeft: "5%", marginRight:"5%"}}> Cart
+            <Nav.Item style={{marginLeft: "5%", marginRight:"5%"}}> {carter.cart.cart.length}
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
