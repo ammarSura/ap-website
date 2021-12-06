@@ -3,12 +3,16 @@ import "../App.css";
 import CarouselComp from "../components/carousel";
 import CardComp from "../components/cards";
 import CirclesComp from "../components/circles";
+import { useAuth0 } from "@auth0/auth0-react";
+
+import LoginButton from "../components/login-button";
+
 
 
 export default function Home() {
+  const { user, isAuthenticated } = useAuth0();
 
-
-
+  if (isAuthenticated) {
     return (
       <div style={{marginBottom: "5%", marginTop: "10%"}}>
           <CarouselComp/>
@@ -32,6 +36,15 @@ export default function Home() {
        
       </div>
     );
+  } else {
+    return (
+      <div style={{marginBottom: "5%", marginTop: "10%"}}>
+          
+        <LoginButton/>
+            
+      </div>
+    );
+  }
 }
 
  

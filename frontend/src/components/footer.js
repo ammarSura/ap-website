@@ -1,9 +1,13 @@
 import React, { Component } from "react"; 
 import { Nav} from "react-bootstrap"; 
+import { useAuth0 } from "@auth0/auth0-react";
+
 import "../App.css"
 
-export default class FooterComp extends Component{
-    render(){
+export default function FooterComp() {
+    const { user, isAuthenticated } = useAuth0();
+
+    if (isAuthenticated) {
         return(
             <div className="footer">
         <div style={{ color: "white" }}>
@@ -26,5 +30,9 @@ export default class FooterComp extends Component{
         </div>
       </div>
         );  
+    } else {
+        return (
+            <h1>Hello!</h1>
+        );
     }
 }

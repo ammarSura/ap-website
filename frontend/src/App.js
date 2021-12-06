@@ -28,6 +28,7 @@ import Wishlist from './pages/Wishlist';
 import UserDetails from './pages/UserDetails';
 // import Autocomplete from './util/searchie';
 import Autocomplete from './util/auto';
+import Cart from './pages/Cart';
 import {CartProvider} from "./contexts/search-context";
 import SearchBar from './components/search-bar';
 
@@ -65,7 +66,8 @@ export default function App() {
         <Route exact path="/women/shirts" element={<WomenShirts/>}/>
         <Route exact path="/wishlist" element={<Wishlist/>}/>
         <Route exact path="/user-details" element={<UserDetails/>}/>
-
+        <Route exact path="/cart" element={<Cart/>} />
+        
         </Routes>
 
         <FooterComp />
