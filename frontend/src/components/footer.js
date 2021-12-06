@@ -5,8 +5,16 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "../App.css"
 
 export default function FooterComp() {
-    const { user, isAuthenticated } = useAuth0();
+    const { user, isAuthenticated, isLoading } = useAuth0();
+    if(isLoading) {
+        return (
+            <div>
+                Loading...
+            </div>
+        );
+    } else {
 
+    
     if (isAuthenticated) {
         return(
             <div className="footer">
@@ -35,4 +43,6 @@ export default function FooterComp() {
             <h1>Hello!</h1>
         );
     }
+
+}
 }
