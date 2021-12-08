@@ -42,6 +42,9 @@ export default function ProductCardComp (props) {
               <Card.Text className="product-card-text">
                   {props.price}  
               </Card.Text>
+              <Card.Text className="product-card-text">
+                  {props.gender}
+              </Card.Text>
               <div style={{display: "grid"}}>
               <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/>
 
