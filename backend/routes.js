@@ -53,6 +53,19 @@ app.post('/addUser', async (req, res) => {
     
 });
 
+app.post('/update/user-details', async (req, res) => {
+  const record = req.body;
+
+  const response = await User.findOneAndUpdate(
+      {email: record.email}, 
+      { first_name: record.first_name, last_name: record.last_name, gender: record.gender, birthday: record.birthday} );
+
+  console.log(response);
+
+  res.json({ status: 'ok' });
+  
+});
+
 app.get('/getUser/:term', async (req, res) => {
 	const email = req.params.term;
 
@@ -123,17 +136,7 @@ app.post('/update/details', async (req, res) => {
 
 // routes for cart
 
-// app.post('/addToCart', async (req, res) => {
-//   const record = req.body;
 
-//   const response = await User.findOneAndUpdate(
-//       {_id: record._id}, 
-//       {$push: { cart: {product_id: record.product_id, quantity: record.quantity }}});
-//       // db.Users1.find({email: "ammarsura@gmail.com"}, {orders: {_id: "16"}})
-//   console.log(response);
-
-//   res.json({ status: 'ok' });
-// });
 
 app.get('/getCart/:term', async (req, res) => {
 	const term = req.params.term;
@@ -262,6 +265,17 @@ app.get('/getCart', async (req, res) => {
 
 // routes for wishlist
 
+app.get('/getWishlist/:term', async (req, res) => {
+	const term = req.params.term;
+  // const thing = term.indexOf('_');
+  // const email = term.slice( 0, thing);
+  // const product_id = term.slice(thing + 1, )
+
+  const check = await User.findOne({email: term}, 'wishlist');
+	console.log('Response => ', check);
+	res.json(check);
+});
+
 app.post('/addToWishlist', async (req, res) => {
   const record = req.body;
 
@@ -277,24 +291,24 @@ app.post('/addToWishlist', async (req, res) => {
 app.post('/removeFromWishlist', async (req, res) => {
   const record = req.body;
 
-  console.log(record, '/removeProduct');
+  console.log('/removeFromWishlist');
 
   const response = await User.findOneAndUpdate(
-      {_id: record._id}, 
+      {email: record.email}, 
       {$pull: { wishlist: { product_id: record.product_id }}});
 
-console.log(response, 'item removed from wishlist');
+console.log(response, 'item removed from wishlist')
 
 res.json({ status: 'ok' });
 });
 
-app.get('/getWishlist/:term', async (req, res) => {
-	const email = req.params.term;
+// app.get('/getWishlist/:term', async (req, res) => {
+// 	const email = req.params.term;
 
-  const records = await User.find({email: email});
-	console.log('Response => ', records);
-	res.json(records);
-});
+//   const records = await User.find({email: email});
+// 	console.log('Response => ', records);
+// 	res.json(records);
+// });
 
 
 // ----------------------------------------------------------------
@@ -351,27 +365,81 @@ app.post('/changePrice', async (req, res) => {
 
 // Routes for search
 
+function splitter(string) {
+  // console.log(string.slice(1,3));
+  var lst = [];
+  
+  for (let i = 0; i < string.length; i++) {
+    // for(let j = i + 1; j < string.length; j++) { 
+    //   if (j + 2 < string.length) {
+    //     lst.push(string.slice(i, j));
+    //   }
+    // }
 
+    if (i + 2 < string.length) {
+      lst.push(string.slice(i, i + 2));
+    }
+  }
 
+  return lst;
+}
 
+function gramer(string) {
+  var x = string.split(' ');
+  console.log(x);
+  var lst = [];
+  splitter(x);
+  // for (let i = 0; i < x.length; i++) {
+  //   console.log(x[i]);
+    // for (let j = 0; j < x[i].length; j++) {
+
+    // }
+    
+  // }
+
+  return lst
+}
 
 app.get('/search/byterm/:term', async (req, res) => {
+  
   const term = req.params.term;
-  if (term === '') {
-    const records = Product.find({});
-    console.log('Response => ', records);
-	res.json(records);
+  
+  console.log(term);
+  ngram = splitter(term);
+  console.log('nram', ngram);
 
-  } else {
-    const records = await Product.find(
-    {$or: [{name: {$regex: term, $options: '<i>'}} , {category : {$regex: term, $options: '<i>'}}]}
-    );
-
-    console.log('Response => ', records);
-    res.json(records);
+  var lst = [];
+  for await (const doc of Product.find().cursor()) {
+    for (let i = 0; i < ngram.length; i++ ) {
+      if (doc.name.includes(ngram[i])) {
+        lst.push(doc);
+        break;
+      }
+    }
   }
-	
+  console.log(lst);
+  res.json(lst);
 });
+
+// app.get('/search/byterm/:term', async (req, res) => {
+//   const term = req.params.term;
+//   console.log(term)
+//   if (term === '') {
+//     const records = Product.find({});
+//     console.log('Response => ', records);
+// 	res.json(records);
+
+//   } else {
+    
+//     const records = await Product.find(
+//     {$or: [{name: {$regex: term, $options: '<i>'}} , {category : {$regex: term, $options: '<i>'}}]}
+//     );
+
+//     console.log('Response => ', records);
+//     res.json(records);
+//   }
+	
+// });
 
 
 // Search by gender
