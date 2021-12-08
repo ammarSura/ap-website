@@ -3,7 +3,7 @@ import "../App.css";
 import ProductDisplayComp from "../components/product-display";
 import { FilterProvider } from "../contexts/filter-context";
 import FilterBar from '../components/filter-bar';
-import { SearchContext } from '../contexts/search-context';
+import { SearchContext } from '../contexts/cart-context';
 
 
 

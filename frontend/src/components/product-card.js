@@ -32,9 +32,12 @@ export default function ProductCardComp (props) {
             <Card.Img variant="top" src={props.image01} style = {{width:"15em", marginLeft: "auto", marginRight: "auto" ,marginTop:"10%"}}/>
 
             <Card.Body style={{height:"80px", marginLeft:"15%"}}>
-
+              {props.name.length < 25 ?
               <Card.Title onClick={() => Butter()} className="product-card-title" style={{cursor: "pointer"}}>{props.name}
               </Card.Title>
+              :
+              <Card.Title onClick={() => Butter()} className="product-card-title" style={{cursor: "pointer"}}>{props.name.slice(0, 21) + '...'}
+              </Card.Title>}
 
               <Card.Text className="product-card-text">
                   {props.price}  

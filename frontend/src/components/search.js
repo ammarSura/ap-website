@@ -4,7 +4,6 @@ import React, { Component, Fragment, useState, useEffect, useContext } from "rea
 import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import "../App.css";
-// import { SearchContext } from '../contexts/search-context';
 
 
 function SearchBar(props) {

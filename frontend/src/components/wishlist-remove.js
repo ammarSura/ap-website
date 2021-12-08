@@ -3,12 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, Button} from "react-bootstrap";
 import "../App.css";
 
-
-
-
-
-
-export default function ProductCardWishlistComp (props) {
+export default function WishlistRemove (props) {
     
     
     const [ prevWishStatus, setPrevWishStatus ] = useState(props.wishlist);
@@ -18,7 +13,7 @@ export default function ProductCardWishlistComp (props) {
 
     async function removeFromWishlist(user_id, product_id) {
    
-        console.log('okay')
+        // console.log('okay')
         await fetch('/removeFromWishlist', {
             
             method: 'POST',
@@ -32,8 +27,7 @@ export default function ProductCardWishlistComp (props) {
                 'Content-Type': 'application/json'
             }
         })
-        setPrevWishStatus(false);
-        // window.location.reload()
+        // setPrevWishStatus(false);
     }
 
     async function addToWishlist(user_id, product_id) {
@@ -54,7 +48,6 @@ export default function ProductCardWishlistComp (props) {
         })
     
         setPrevWishStatus(true);
-        // window.location.reload()
     
     }
     
@@ -77,25 +70,31 @@ export default function ProductCardWishlistComp (props) {
     });
 
     
-    if (!wishStatus) {
-        return (
-            <div>
-                <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(true) }>Add to Wishlist
-                </Button>
+    // if (!wishStatus) {
+    //     return (
+    //         <div>
+    //             <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(true) }>Add to Wishlist
+    //             </Button>
                 
-            </div>
+    //         </div>
             
-        );
-    } else {
-        return (
-            <div>
-                <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(false) }>
-                    Remove from Wishlist
-                </Button>
-            </div>
+    //     );
+    // } else {
+    //     return (
+    //         <div>
+    //             <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(false) }>
+    //                 Remove from Wishlist
+    //             </Button>
+    //         </div>
             
-        );
-    }
+    //     );
+    // }
     
-      
+    return (
+        <div>
+            <Button style={{display:"block", width: "80%", marginBottom: "1em"}} >
+                Remove from Wishlist
+            </Button>
+             </div>   
+    );
 } 

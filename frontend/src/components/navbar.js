@@ -11,7 +11,8 @@ import LoginButton from "./login-button";
 import SearchBar from "./search-bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from './logout-button';
-import { CartContext } from '../contexts/search-context';
+import { CartContext } from '../contexts/cart-context';
+import CartCounter from "./cart-counter";
 
 
 
@@ -22,6 +23,7 @@ export default function NavbarComp() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [ db_state, setDbState ] = useState(false);
   const carter = useContext( CartContext );
+  console.log('cartcount', carter.cart.cart);
   if (isLoading) {
     return (
       <div>Loading...</div>
@@ -110,7 +112,10 @@ export default function NavbarComp() {
               height: "30px"
             }}/>
             </Link>
-            {/* {carter.cart.cart.length} */}
+            
+            </Nav.Item>
+            <Nav.Item>
+              <CartCounter cart={carter.cart.cart}/>
             </Nav.Item>
             <LogoutButton/>
           </Nav>

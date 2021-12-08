@@ -1,62 +1,64 @@
 import React, { Component, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Card, Button} from "react-bootstrap";
-import { CartContext } from '../contexts/search-context';
+import { CartContext } from '../contexts/cart-context';
 import "../App.css";
 
 
-async function removeFromCart(user_id, product_id, count) {
-   
-    
-    await fetch('/removeFromCart', {
-        
-        method: 'POST',
-        body: JSON.stringify(
-            { 
-                email: user_id ,
-                product_id: product_id,
-                quantity: count,
 
-            }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-
-}
-
-async function updateCart(user_id, product_id, count) {
-   
-    
-    await fetch('/updateCart', {
-        
-        method: 'POST',
-        body: JSON.stringify(
-            { 
-                email: user_id ,
-                product_id: product_id,
-                quantity: count,
-
-            }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-
-}
 
 
 export default function ProductCardCounterComp (props) {
     
     const carter = useContext( CartContext );
     const [prevCount, setPrevCount ] = useState(props.quantity);
-    const [ originalCount, setOriginalCount ] = useState(props.quantity);
     const [ count, setCount ] = useState(props.quantity);
     
-    const [ isLoaded, setLoading ] = useState(false);
 
-    function Change() {
+    async function removeFromCart(user_id, product_id, count) {
+   
+    
+        await fetch('/removeFromCart', {
+            
+            method: 'POST',
+            body: JSON.stringify(
+                { 
+                    email: user_id ,
+                    product_id: product_id,
+                    quantity: count,
+    
+                }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
 
+        // carter.setCartLoading(false);
+        window.location.reload()
+    
+    }
+    
+    async function updateCart(user_id, product_id, count) {
+       
+        
+        await fetch('/updateCart', {
+            
+            method: 'POST',
+            body: JSON.stringify(
+                { 
+                    email: user_id ,
+                    product_id: product_id,
+                    quantity: count,
+    
+                }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        // carter.setCartLoading(false);
+        window.location.reload()
+    
     }
 
     useEffect(() => {

@@ -9,30 +9,34 @@ export function CartProvider({ children }) {
   const [ cartIsLoaded, setCartLoading ] = useState(false);
   const [ wishlistIsLoaded, setWishlistLoading ] = useState(false);
 
-  async function fetcher() {
-    await fetch('/getCart/' + 'ammarsura@gmail.com' )
+    async function fetchCart() {
+        await fetch('/getCart/' + 'ammarsura@gmail.com' )
+            .then(res => res.json())
+            .then(result => {
+            // cart = result.cart;
+                setCart(result);
+                setCartLoading(true);
+                
+            });
+    }
+    async function fetchWishlist() {
+        await fetch('/getWishlist/' + 'ammarsura@gmail.com' )
         .then(res => res.json())
         .then(result => {
-        // cart = result.cart;
-            setCart(result);
-            setCartLoading(true);
-            
+            setWishlist(result);
+            setWishlistLoading(true);
         });
-    
-    
-    await fetch('/getWishlist/' + 'ammarsura@gmail.com' )
-    .then(res => res.json())
-    .then(result => {
-        setWishlist(result);
-        setWishlistLoading(true);
-    });
 
-}
+    }
     
 
     useEffect ( () => {
-        if ( !cartIsLoaded && !wishlistIsLoaded ) {
-            fetcher();
+        if ( !cartIsLoaded ) {
+            fetchCart();
+        }
+
+        if ( !wishlistIsLoaded ) {
+            fetchWishlist()
         }
     })
     if ( cartIsLoaded && wishlistIsLoaded ) {
@@ -44,8 +48,8 @@ export function CartProvider({ children }) {
     
     } else {
         return (
-            <div>
-                Loading...
+            <div style={{marginTop:"1000px"}}>
+                1Loading...
             </div>
         )
     }

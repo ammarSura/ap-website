@@ -29,7 +29,7 @@ import UserDetails from './pages/UserDetails';
 // import Autocomplete from './util/searchie';
 import Autocomplete from './util/auto';
 import Cart from './pages/Cart';
-import {CartProvider} from "./contexts/search-context";
+import {CartProvider} from "./contexts/cart-context";
 import SearchBar from './components/search-bar';
 
 

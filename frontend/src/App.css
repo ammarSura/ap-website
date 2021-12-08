@@ -260,3 +260,12 @@ a:hover {
   margin: 40px auto 80px auto;
   font-size: 1.75em;
 }
+
+.circle {
+  width: 1.05em;
+  line-height: 1em;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2em;
+  border: 3px solid #000;
+}

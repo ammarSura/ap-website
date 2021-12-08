@@ -3,7 +3,7 @@ import "../../../App.css";
 import ProductDisplayComp from '../../../components/product-display';
 import FilterBar from '../../../components/filter-bar';
 import { FilterProvider } from "../../../contexts/filter-context";
-import { CartContext } from "../../../contexts/search-context";
+import { CartContext } from "../../../contexts/cart-context";
 
 
 
@@ -70,9 +70,11 @@ export default function WomenTrousers() {
       
     }
 
-    if ( !cartIsLoaded && !wishlistIsLoaded) {
+    if ( !cartIsLoaded) {
       setCartLoading(carter.cartIsLoaded);
       setCart(carter.cart.cart);
+    }
+    if ( !wishlistIsLoaded ) {
       setWishlistLoading(carter.wishlistIsLoaded);
       setWishlist(carter.wishlist.wishlist);
       // console.log(carter.wishlist.wishlist)
