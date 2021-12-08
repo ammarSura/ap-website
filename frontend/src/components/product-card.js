@@ -28,7 +28,7 @@ export default function ProductCardComp (props) {
     if (isLoaded === true) {
       return (
        
-        <Card style={{width : "20em", height : "38em"}} >
+        <Card style={{width : "20em", height : "41em"}} >
             <Card.Img variant="top" src={props.image01} style = {{width:"15em", marginLeft: "auto", marginRight: "auto" ,marginTop:"10%"}}/>
 
             <Card.Body style={{height:"80px", marginLeft:"15%"}}>

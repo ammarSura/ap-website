@@ -23,16 +23,33 @@ export default function ProductDisplayComp (props) {
     function looper() {
         var lst1 = props.lst.slice();
         var lst = [];
+        
        
 
         for (let i = 0; i < lst1.length; i++) {
+            var checkPrice = false;
+            var checkGender = false;
             if (filter.priceFilter !== null) {
                 if (lst1[i].price >= filter.priceFilter[0] && lst1[i].price <= filter.priceFilter[1] ) {
-                lst.push(lst1[i])
+                // lst.push(lst1[i])
+                checkPrice = true;
                 // console.log('okay')
                 } 
             } else {
-                lst.push(lst1[i])
+                // lst.push(lst1[i])
+                checkPrice = true;
+            }
+
+            if (filter.genderFilter !== null) {
+                if (lst1[i].gender === filter.genderFilter ) {
+                    checkGender = true
+                }
+            } else {
+                checkGender = true;
+            }
+
+            if ( checkGender && checkPrice ) {
+                lst.push(lst1[i]);
             }
         }
             
