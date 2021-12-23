@@ -1,39 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
+import { CartContext } from "../contexts/cart-context";
+
 
 
 export default function CartCounter(props) {
+    
+    const carter = useContext( CartContext );
+    const [ cart, setCart ] = useState([]);
+    const [ cartIsLoaded, setCartLoading ] = useState(false);
+    
+    
 
-    const [ Count, setCount ] = useState(0);
-    const [ isLoaded, setLoading ] = useState(false);
-
-    function getCount() {
-        let count = 0;
-        for (let i = 0; i < props.cart.length; i++) {
-            count = count + props.cart[i].quantity;
-            // console.log(props.cart[i].quantity);            
+    useEffect( () => {
+        if ( !cartIsLoaded ) {
+            setCartLoading(carter.cartIsLoaded);
+            setCart(carter.cart.cart);
+        } else {
+            console.log('carterer', cart);
         }
-        console.log('c',count)
-        setCount(count);
-        setLoading(true);
-    }
-
-    if ( !isLoaded ) {
-        getCount();
+    });
+    if ( cartIsLoaded ) {
         return (
-            <div>
-                loading...
+            <div className="circle"> 
+                {cart.length}
             </div>
         );
     } else {
         return (
-            <div className="circle"> 
-                {Count}
-            </div>
+        <div>
+            loading...
+        </div>
         );
     }
-
-
-
-    
-    
 }

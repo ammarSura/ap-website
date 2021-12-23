@@ -9,6 +9,8 @@ import { Card, Button} from "react-bootstrap";
 import "../App.css";
 import ProductCardCounterComp from './product-card-counter';
 import WishlistRemove from './wishlist-remove';
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 
 // export default class ProductCardComp extends Component {
@@ -18,6 +20,7 @@ export default function WishlistCardComp (props) {
     const [ wishRemoved, setWishRemoved ] = useState(false);
     const [ product, setProduct ] = useState(null);
     const [ isLoaded, setLoading ] = useState(false);
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     useEffect(() => {
       if ( isLoaded === false) {
@@ -36,16 +39,14 @@ export default function WishlistCardComp (props) {
       }
     });
 
-    async function removeFromWishlist(user_id, product_id) {
-   
-      console.log(user_id, product_id)
+    async function removeFromWishlist(product_id) {
       await fetch('/removeFromWishlist', {
           
           method: 'POST',
           body: JSON.stringify(
               { 
-                  email: user_id ,
-                  product_id: product_id,
+                  email: user.email ,
+                  product_id: props.id,
                   
               }),
           headers: {
@@ -81,7 +82,7 @@ export default function WishlistCardComp (props) {
               </Card.Text>
               <div style={{display: "grid"}}>
               {/* <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/> */}
-              <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={ () => removeFromWishlist('ammarsura@gmail.com', product._id)}>
+              <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={ () => removeFromWishlist(product._id)}>
                 Remove from Wishlist
               </Button>
 

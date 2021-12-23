@@ -48,7 +48,7 @@ export default function ProductCardComp (props) {
               <div style={{display: "grid"}}>
               <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/>
 
-              <ProductCardCounterComp id={props.id} quantity={props.quantity}/>
+              {/* <ProductCardCounterComp id={props.id} quantity={props.quantity}/> */}
               </div>
 
             </Card.Body>

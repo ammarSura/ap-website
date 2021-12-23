@@ -11,11 +11,15 @@ import LoginButton from "../components/login-button";
 
 export default function Home() {
   const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log('aasadadfas' )
+  // console.log('user', user)
   if (isLoading) {
-    return (
+    return(
       <div>Loading...</div>
     );
   } else {
+
+  
   if (isAuthenticated) {
     return (
       <div style={{marginBottom: "5%", marginTop: "10%"}}>
@@ -41,15 +45,18 @@ export default function Home() {
       </div>
     );
   } else {
+    
     return (
-      <div style={{marginBottom: "5%", marginTop: "10%"}}>
+      <div style={{marginBottom: "5%"}}>
           
         <LoginButton/>
+        
             
       </div>
     );
   }
 }
+
 }
 
  

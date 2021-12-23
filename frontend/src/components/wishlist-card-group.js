@@ -8,7 +8,7 @@ export default class  WishlistCardGroupComp extends Component {
 
     looper() {
       const comps = this.props.lst.map((prod) => 
-        <WishlistCardComp key = {prod._id} id = {prod.product_id} />)
+        <WishlistCardComp key = {prod.id} id = {prod.product_id} />)
 
       return comps;
     };

@@ -17,6 +17,7 @@ mongoose.connect('mongodb+srv://asura:asdfg@cluster0.udjat.mongodb.net/Database?
   useNewUrlParser: true,
   useUnifiedTopology: true,
 },
+
 () => {
   console.log("Users Database (MongoDB) is now connected to Port:", PORT);
 });
@@ -47,9 +48,10 @@ app.post('/addUser', async (req, res) => {
     if (check.length==0) {
       const response = await User.create(record);
       console.log(response);
-
-    res.json({ status: 'ok' });
+      res.json({ status: 'ok' });
     }
+
+    console.log('/addUser', check);
     
 });
 
@@ -60,7 +62,7 @@ app.post('/update/user-details', async (req, res) => {
       {email: record.email}, 
       { first_name: record.first_name, last_name: record.last_name, gender: record.gender, birthday: record.birthday} );
 
-  console.log(response);
+  console.log('/update/user-details', response);
 
   res.json({ status: 'ok' });
   
@@ -70,7 +72,7 @@ app.get('/getUser/:term', async (req, res) => {
 	const email = req.params.term;
 
   const records = await User.find({email: email});
-	console.log('Response => ', records);
+	console.log('/getUser/:term', records);
 	res.json(records);
 });
 
@@ -81,7 +83,7 @@ app.post('/removeUser', async (req, res) => {
 
     const response = await User.deleteOne({ record });
 
-	console.log(response, '/removeUser repsonse');
+	console.log('/removeUser', response);
 
 	res.json({ status: 'ok' });
 });
@@ -96,7 +98,7 @@ app.post('/update/email', async (req, res) => {
       {_id: record._id}, 
       {email: record.email} );
 
-  console.log(response);
+  console.log('/update/email', response);
 
   res.json({ status: 'ok' });
 });
@@ -110,7 +112,7 @@ app.post('/update/address', async (req, res) => {
       {$push: { addresses: {name: record.name, line1: record.line1, line2: record.line2, pincode: record.pincode, city: record.city, state: record.state, country: record.country}}}
     );
 
-    console.log(response);
+    console.log('/update/address', response);
 
     res.json({status: 'ok'});
 });
@@ -129,7 +131,7 @@ app.post('/update/details', async (req, res) => {
   
   );
 
-  console.log(response);
+  console.log('/update/details', response);
 
   res.json({status: 'ok'});
 })
@@ -140,12 +142,9 @@ app.post('/update/details', async (req, res) => {
 
 app.get('/getCart/:term', async (req, res) => {
 	const term = req.params.term;
-  // const thing = term.indexOf('_');
-  // const email = term.slice( 0, thing);
-  // const product_id = term.slice(thing + 1, )
-
+  
   const check = await User.findOne({email: term}, 'cart');
-	console.log('Response => ', check);
+	console.log('/getCart/:term', check);
 	res.json(check);
 });
 
@@ -156,7 +155,7 @@ app.post('/removeFromCart', async (req, res) => {
   const response1 = await User.findOneAndUpdate({email: record.email}, 
   {$pull: { cart: { product_id: record.product_id }}});
 
-  console.log(response1);
+  console.log('/removeFromCart', response1);
 });
 
 app.post('/updateCart', async (req, res) => {
@@ -166,77 +165,50 @@ app.post('/updateCart', async (req, res) => {
   const response1 = await User.findOneAndUpdate({email: record.email}, 
   {$pull: { cart: { product_id: record.product_id }}});
 
-  console.log(response1);
+  console.log('/updateCart', response1);
 
   
 
   const response2 = await User.findOneAndUpdate( {email: record.email}, 
   {$push: { cart: {product_id: record.product_id, quantity: record.quantity }}});
   
-  console.log(response2);
+  console.log('/updateCart', response2);
   res.json({ status: 'ok' });
 
  
 })
 
+app.post('/addToCart', async (req, res) => {
+  const record = req.body;
+  console.log('record: ', record)
 
-// app.post('/addToCart', async (req, res) => {
   
-//   const record = req.body;
-//   console.log(record);
+
+  const response = await User.findOneAndUpdate( 
+    {email: record.email}, 
+    {$push: { cart: { product_id: record.product_id, size: record.size } } }
+    );
   
-//   const check = await User.findOne({email:record.email}, 'cart');
-//   console.log('Chekc', check);
+  console.log('/addToCart', response);
+  res.json({ status: 'ok' });
+
+ 
+})
+
+app.post('/addReview', async (req, res) => {
+  const record = req.body;
+  // console.log('record: ', record)
+
   
-//   console.log(check.cart);
 
-//   var inList = false;
-//   for (let i = 0; i < check.cart.length; i++) {
-//     if (check.cart[i].product_id === record.product_id) {
-//       inList = true;
-//       break;
-//     }
-//   }
-
-//   if (inList) {
-//     const response1 = await User.findOneAndUpdate({email: record.email}, 
-//       {$pull: { cart: { product_id: record.product_id }}});
-    
-//         console.log(response1);
-    
-//     const response2 = await User.findOneAndUpdate( {email: record.email}, 
-//       {$push: { cart: {product_id: record.product_id, quantity: record.quantity }}});
-//       console.log(response2);
-  // } //else {
-  //   const response2 = await User.findOneAndUpdate( {email: record.email}, 
-  //     {$push: { cart: {product_id: record.product_id, quantity: record.quantity }}});
-  //     console.log(response2);
-  // }
-
-  // console.log(inList)
-  // if (check.length==0) {
-  // const response = await User.findOneAndUpdate(
-  // {email: record.email}, 
-  // {$push: { cart: {product_id: record.product_id, quantity: record.quantity }}});
-  // console.log(response);
-
-  // res.json({ status: 'ok' });
+  const response2 = await Product.findOneAndUpdate( {id: record.id}, 
+  {$push: { reviews: { name: record.name, reviewString: record.reviewString } } });
   
-  // } else {
-  //   const quant = check.quantity;
-    
-  //   const response1 = await User.findOneAndUpdate(
-  //     {email: record.email}, 
-  //     {$pull: { cart: { product_id: record.product_id }}});
-  //   }
-  //   console.log(response1);
+  console.log('/addReview', response2);
+  res.json({ status: 'ok' });
 
-  //   const response2 = await User.findOneAndUpdate(
-  //     {email: record.email}, 
-  //     {$push: { cart: {product_id: record.product_id, quantity: quant }}});
-  //     console.log(response2);
-  
-// });
+ 
+})
 
 app.post('/removeFromCart', async (req, res) => {
   const record = req.body;
@@ -247,7 +219,7 @@ app.post('/removeFromCart', async (req, res) => {
       {_id: record._id}, 
       {$pull: { cart: { product_id: record.product_id }}});
 
-console.log(response, 'item removed from cart')
+console.log('/removeFromCart', response)
 
 res.json({ status: 'ok' });
 });
@@ -258,7 +230,7 @@ app.get('/getCart', async (req, res) => {
   const response = await User.findOne(
       {_id: record._id});
 
-  console.log(response);
+  console.log('/getCart', response);
 
   res.json(respons.cart);
 });
@@ -272,7 +244,7 @@ app.get('/getWishlist/:term', async (req, res) => {
   // const product_id = term.slice(thing + 1, )
 
   const check = await User.findOne({email: term}, 'wishlist');
-	console.log('Response => ', check);
+	console.log('/getWishlist/:term', check);
 	res.json(check);
 });
 
@@ -283,7 +255,7 @@ app.post('/addToWishlist', async (req, res) => {
       {email: record.email}, 
       {$push: { wishlist: {product_id: record.product_id}}});
 
-  console.log(response);
+  console.log('/addToWishlist', response);
 
   res.json({ status: 'ok' });
 });
@@ -291,13 +263,13 @@ app.post('/addToWishlist', async (req, res) => {
 app.post('/removeFromWishlist', async (req, res) => {
   const record = req.body;
 
-  console.log('/removeFromWishlist');
+  
 
   const response = await User.findOneAndUpdate(
       {email: record.email}, 
       {$pull: { wishlist: { product_id: record.product_id }}});
 
-console.log(response, 'item removed from wishlist')
+console.log('/removeFromWishlist', response)
 
 res.json({ status: 'ok' });
 });
@@ -323,7 +295,7 @@ app.post('/addProduct', async (req, res) => {
 
     const response = await Product.create(record);
 
-    console.log(response);
+    console.log('/addProduct', response);
 
     res.json({ status: 'ok' });
 });
@@ -335,7 +307,7 @@ app.post('/removeProduct', async (req, res) => {
 
     const response = await Product.deleteOne({ record });
 
-	console.log(response, 'removed Product');
+	console.log('/removeProduct', response);
 
 	res.json({ status: 'ok' });
 });
@@ -343,8 +315,8 @@ app.post('/removeProduct', async (req, res) => {
 app.get('/getProduct/:term', async (req, res) => {
 	const id = req.params.term;
 
-  const records = await Product.find({_id: id});
-	console.log('Response => ', records);
+  const records = await Product.find({id: id});
+	console.log('/getProduct/:term', records);
 	res.json(records);
 });
 
@@ -354,10 +326,10 @@ app.post('/changePrice', async (req, res) => {
   const record = req.body;
 
   const response = await Product.findOneAndUpdate(
-      {_id: record._id}, 
+      {id: record.id}, 
       {price: record.age} );
 
-  console.log(response);
+  console.log('/changePrice', response);
 
   res.json({ status: 'ok' })
 });
@@ -417,7 +389,7 @@ app.get('/search/byterm/:term', async (req, res) => {
       }
     }
   }
-  console.log(lst);
+  console.log('/search/byterm/:term', lst);
   res.json(lst);
 });
 
@@ -445,10 +417,12 @@ app.get('/search/byterm/:term', async (req, res) => {
 // Search by gender
 
 app.get('/search/gender/:term', async (req, res) => {
-  const gender = req.params.term;
+  
+  const gender = req.params.term;console.log(gender)
+
 
   const records = await Product.find({gender: gender});
-	console.log('Response => ', records);
+	console.log('/search/gender/:term', records);
 	res.json(records);
     
   });
@@ -460,7 +434,7 @@ app.get('/search/men/:category', async (req, res) => {
   const category = req.params.category
 
   const records = await Product.find({$and: [ {gender: {$regex: 'Men'}} , {$or: [{category : {$regex: category, $options: '<i>'} },{name: {$regex: category, $options: '<i>'} }] } ] });
-  console.log('Response => ', records);
+  console.log('/search/men/:category', records);
 	res.json(records);
 
 
@@ -471,7 +445,7 @@ app.get('/search/women/:category', async (req, res) => {
   const category = req.params.category
 
   const records = await Product.find({$and: [ {gender: {$regex: 'Women'}} , {$or: [{category : {$regex: category, $options: '<i>'} },{name: {$regex: category, $options: '<i>'} }] } ] });
-  console.log('Response => ', records);
+  console.log('/search/women/:category', records);
 	res.json(records);
 
 

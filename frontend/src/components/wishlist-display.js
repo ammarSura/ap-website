@@ -19,7 +19,7 @@ export default class WishlistDisplayComp extends Component {
         }
 
         const comps = mainlst.map( (prod) => 
-        <WishlistCardGroupComp key = {prod[0]._id} lst = {prod}/>)
+        <WishlistCardGroupComp key = {prod[0].id} lst = {prod}/>)
 
         return comps;
     }

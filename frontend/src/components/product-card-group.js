@@ -11,7 +11,7 @@ export default function ProductCardGroupComp(props) {
       const lst = props.lst;
       
       const comps = lst.map((prod) => 
-        <ProductCardComp key = {prod._id} id = {prod._id} name = {prod.name} image01={prod.image01} price={prod.price} quantity={prod.quantity} wishlist={prod.wishlist} gender = {prod.gender}/>)
+        <ProductCardComp key = {prod.id} id = {prod.id} name = {prod.name} image01={prod.image01} price={prod.price} quantity={prod.quantity} wishlist={prod.wishlist} gender = {prod.gender}/>)
 
       return comps;
     };

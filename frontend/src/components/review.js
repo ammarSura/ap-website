@@ -11,7 +11,7 @@ export default class Review extends Component{
                 
                 {/* <ul style={{listStyleType:"none"}}> */}
                     
-                    <h3>"{this.props.review}"</h3>
+                    <p>"{this.props.review}"</p>
                     <p>- {this.props.name}</p>
                     
                 

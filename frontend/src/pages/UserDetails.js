@@ -3,12 +3,13 @@ import "../App.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from 'react-bootstrap';
 
+
 export default function UserDetails() {
 
-    const { user, isAuthenticated } = useAuth0();
     const [ input_state, setInputState ] = useState(false);
     const [user_state, setUser] = useState(null);
     const [isLoaded, setLoading] = useState(false);
+    const { user, isAuthenticated } = useAuth0();
 
     async function Check(details) {
    
@@ -16,7 +17,7 @@ export default function UserDetails() {
         await fetch('/update/user-details', {
             
             method: 'POST',
-            body: JSON.stringify({ email: 'ammarsura@gmail.com', first_name: details.first_name, last_name: details.last_name, gender: details.gender, birthday: details.birthday,}),
+            body: JSON.stringify({ email: user.email, first_name: details.first_name, last_name: details.last_name, gender: details.gender, birthday: details.birthday,}),
             headers: {
                 'Content-Type': 'application/json'
             }

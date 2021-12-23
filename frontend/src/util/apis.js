@@ -9,6 +9,7 @@ async function Check(user) {
         method: 'POST',
         body: JSON.stringify(
             { 
+                user_name: user.user_name,
                 first_name: user.first_name, 
                 last_name: user.last_name, 
                 birthday: user.birthday, 

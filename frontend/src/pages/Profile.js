@@ -20,11 +20,12 @@ export default function Profile() {
     const { user, isAuthenticated } = useAuth0();
     const [user_state, setUser] = useState(null);
     const [isLoaded, setLoading] = useState(false);
+    // console.log('user', user);
     
 
     useEffect( () =>  {
       if (isAuthenticated && isLoaded===false) {
-        // console.log(user)
+        console.log('prof-user', user.name)
         fetch('/getUser/' + user.email)
           .then(res => res.json())
           .then(result => {

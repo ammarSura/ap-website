@@ -35,15 +35,16 @@ import SearchBar from './components/search-bar';
 
 
 
+
 export default function App() {
 
-  
+    
     
     return (
       <div>
+        
         <CartProvider>
         <NavbarComp/> 
-        
       
         <Routes> 
         
@@ -67,14 +68,13 @@ export default function App() {
         <Route exact path="/wishlist" element={<Wishlist/>}/>
         <Route exact path="/user-details" element={<UserDetails/>}/>
         <Route exact path="/cart" element={<Cart/>} />
-        
+
         </Routes>
 
         <FooterComp />
-        </CartProvider> 
-        
-        
-        
+
+        </CartProvider>
+          
         </div>
     );
 }

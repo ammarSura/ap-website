@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const ProductSchema = new mongoose.Schema({
 	
 
-	_id: { type: String, required: true },
+	id: { type: String, required: true },
 	name: { type: String, required: true },
 	description: { type: String },
 	category: [{ type: String }],
@@ -12,16 +12,17 @@ const ProductSchema = new mongoose.Schema({
 	rating: { type: Number },
 	reviews: [
 		{ 
-			name: {type: String},
-			reviewline: {type: String}
+			name: { type: String },
+			reviewString: {type: String}
 	 	}
 	],
 	buyers: [{ type: String }],
-	gender: {type: String}
+	gender: {type: String},
+	sizes: [ { type: String } ]
 
 
 }, 
-{ collection: 'Products'}
+{ collection: 'Products1'}
 )
 
 const model = mongoose.model('ProductModel', ProductSchema)

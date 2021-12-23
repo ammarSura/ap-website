@@ -18,6 +18,7 @@ ReactDOM.render(
     domain="dev-4hzu5c-y.us.auth0.com"
     clientId="kKJqCr1w8KniEBjIWNdRuOcn2mnvLkwl"
     redirectUri={window.location.origin}>
+    {/* redirectUri={"/wishlist"} > */}
 
     <App />
 
@@ -28,4 +29,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-

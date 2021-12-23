@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, Button} from "react-bootstrap";
+import { useAuth0 } from "@auth0/auth0-react";
 import "../App.css";
 
 export default function WishlistRemove (props) {
@@ -8,10 +9,10 @@ export default function WishlistRemove (props) {
     
     const [ prevWishStatus, setPrevWishStatus ] = useState(props.wishlist);
     const [ wishStatus, setWishStatus ] = useState(props.wishlist);
-    
+    const { user, isAuthenticated } = useAuth0();
     const [ isLoaded, setLoading ] = useState(false);
 
-    async function removeFromWishlist(user_id, product_id) {
+    async function removeFromWishlist( product_id) {
    
         // console.log('okay')
         await fetch('/removeFromWishlist', {
@@ -19,7 +20,7 @@ export default function WishlistRemove (props) {
             method: 'POST',
             body: JSON.stringify(
                 { 
-                    email: user_id ,
+                    email: user.email ,
                     product_id: product_id,
                     
                 }),
@@ -30,7 +31,7 @@ export default function WishlistRemove (props) {
         // setPrevWishStatus(false);
     }
 
-    async function addToWishlist(user_id, product_id) {
+    async function addToWishlist( product_id) {
    
         console.log('asda', product_id);
         await fetch('/addToWishlist', {
@@ -38,7 +39,7 @@ export default function WishlistRemove (props) {
             method: 'POST',
             body: JSON.stringify(
                 { 
-                    email: user_id ,
+                    email: user.email ,
                     product_id: product_id,
     
                 }),
@@ -60,10 +61,10 @@ export default function WishlistRemove (props) {
             console.log('chaneged')
             if (wishStatus) {
                 console.log('as')
-                addToWishlist('ammarsura@gmail.com', props.id);
+                addToWishlist( props.id);
             } else {
                 console.log('remov')
-                removeFromWishlist('ammarsura@gmail.com', props.id);
+                removeFromWishlist( props.id);
             }
         }
        

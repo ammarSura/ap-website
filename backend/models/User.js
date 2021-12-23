@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
     // _id: { type: String, required: true},
+    user_name: {type: String},
 	first_name: { type: String },
     last_name: { type: String },
 	date: {
@@ -25,7 +26,7 @@ const UserSchema = new mongoose.Schema({
     cart: [
         {
             product_id: {type: String},
-            quantity: {type: Number}
+            size: {type: String}
         }
     ],
 

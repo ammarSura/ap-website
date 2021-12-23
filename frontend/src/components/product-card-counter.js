@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Card, Button} from "react-bootstrap";
 import { CartContext } from '../contexts/cart-context';
+import { useAuth0 } from "@auth0/auth0-react";
 import "../App.css";
 
 
@@ -13,9 +14,12 @@ export default function ProductCardCounterComp (props) {
     const carter = useContext( CartContext );
     const [prevCount, setPrevCount ] = useState(props.quantity);
     const [ count, setCount ] = useState(props.quantity);
+    const { user, isAuthenticated } = useAuth0();
+
+  
     
 
-    async function removeFromCart(user_id, product_id, count) {
+    async function removeFromCart( product_id, count) {
    
     
         await fetch('/removeFromCart', {
@@ -23,9 +27,10 @@ export default function ProductCardCounterComp (props) {
             method: 'POST',
             body: JSON.stringify(
                 { 
-                    email: user_id ,
+                    email: user.email ,
                     product_id: product_id,
                     quantity: count,
+                    
     
                 }),
             headers: {
@@ -38,7 +43,7 @@ export default function ProductCardCounterComp (props) {
     
     }
     
-    async function updateCart(user_id, product_id, count) {
+    async function updateCart( product_id, count, size, sizes) {
        
         
         await fetch('/updateCart', {
@@ -46,9 +51,10 @@ export default function ProductCardCounterComp (props) {
             method: 'POST',
             body: JSON.stringify(
                 { 
-                    email: user_id ,
+                    email: user.email ,
                     product_id: product_id,
                     quantity: count,
+                    size: size,
     
                 }),
             headers: {
@@ -68,9 +74,9 @@ export default function ProductCardCounterComp (props) {
             
             if (count <= 0 ) {
                 console.log('zeroed', count)
-                removeFromCart('ammarsura@gmail.com', props.id, count);
+                removeFromCart( props.id, count);
             } else {
-                updateCart('ammarsura@gmail.com', props.id, count);
+                updateCart( props.id, count, props.size);
             }
             setPrevCount(count);
         }

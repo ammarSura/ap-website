@@ -48,7 +48,7 @@ export default function Men() {
     if (cart.length > 0) {
       for (let i = 0; i < products.length; i++) {
         for (let j = 0; j < cart.length; j++) {
-          if(cart[j].product_id === products[i]._id) {
+          if(cart[j].product_id === products[i].id) {
             products[i].quantity = cart[j].quantity;
           } 
         }
@@ -58,7 +58,7 @@ export default function Men() {
     if (wishlist.length > 0) {
       for (let i = 0; i < products.length; i++) {
         for (let j = 0; j < wishlist.length; j++) {
-          if(wishlist[j].product_id === products[i]._id) {
+          if(wishlist[j].product_id === products[i].id) {
             products[i].wishlist = true;
           }
         }

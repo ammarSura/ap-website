@@ -1,4 +1,4 @@
-import React, { Component, useState, useContext } from "react";
+import React, { Component, useState, useContext, useEffect } from "react";
 import {Link} from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -21,9 +21,28 @@ import CartCounter from "./cart-counter";
 export default function NavbarComp() {
 
   const { user, isAuthenticated, isLoading } = useAuth0();
-  const [ db_state, setDbState ] = useState(false);
+  console.log('boo', user)
+
   const carter = useContext( CartContext );
-  console.log('cartcount', carter.cart.cart);
+  
+  
+  const [ db_state, setDbState ] = useState(false);
+
+  useEffect ( () => {
+
+    if (isAuthenticated) {
+      if ( !carter.userIsLoaded ) {
+        carter.setUser(user);
+        carter.setUserLoading(true);
+        
+      } else {
+        console.log('homes', carter.user)
+      }
+    }
+    
+  })
+  
+  // console.log('cartcount', carter.cart.cart);
   if (isLoading) {
     return (
       <div>Loading...</div>
@@ -36,6 +55,7 @@ export default function NavbarComp() {
     if(db_state === false) {
       if (user.hasOwnProperty('given_name')) {
         Check({
+          user_name: user.given_name + ' ' + user.family_name,
           first_name: user.given_name,
           last_name: user.family_name,
           birthday: '',
@@ -48,6 +68,7 @@ export default function NavbarComp() {
         });
       } else {
         Check({
+          user_name: 'User' + String(Math.floor((Math.random() * 10000))),
           first_name: '',
           last_name: '',
           birthday: '',
@@ -60,10 +81,10 @@ export default function NavbarComp() {
         });
       }
       setDbState(true);
+      
+      console.log('her', carter.user);
     }
-   
-    
-    
+
     console.log(user.hasOwnProperty('given_name'))
     return (
       <Navbar id="main-navbar" fixed="top" collapseOnSelect expand="lg" bg="myRed" variant="light">
@@ -78,7 +99,7 @@ export default function NavbarComp() {
               <NavDropdown.Item href="/men/tshirts">Tshirts</NavDropdown.Item>
               <NavDropdown.Item href="/men/jeans">Jeans</NavDropdown.Item>
               <NavDropdown.Item href="/men/trousers">Trousers</NavDropdown.Item>
-              <NavDropdown.Item href="/women/shirts">Shirts</NavDropdown.Item>
+              <NavDropdown.Item href="/men/shirts">Shirts</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/men">View All</NavDropdown.Item>
             </NavDropdown>

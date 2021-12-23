@@ -1,6 +1,8 @@
 import React, { Component, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, Button} from "react-bootstrap";
+import { useAuth0 } from "@auth0/auth0-react";
+
 import "../App.css";
 
 
@@ -13,18 +15,21 @@ export default function ProductCardWishlistComp (props) {
     
     const [ prevWishStatus, setPrevWishStatus ] = useState(props.wishlist);
     const [ wishStatus, setWishStatus ] = useState(props.wishlist);
+    const { user, isAuthenticated } = useAuth0();
     
     const [ isLoaded, setLoading ] = useState(false);
 
-    async function removeFromWishlist(user_id, product_id) {
+    console.log('nnn', props.wishlist);
+
+    async function removeFromWishlist(product_id) {
    
-        console.log('okay')
+        
         await fetch('/removeFromWishlist', {
             
             method: 'POST',
             body: JSON.stringify(
                 { 
-                    email: user_id ,
+                    email: user.email ,
                     product_id: product_id,
                     
                 }),
@@ -36,7 +41,7 @@ export default function ProductCardWishlistComp (props) {
         // window.location.reload()
     }
 
-    async function addToWishlist(user_id, product_id) {
+    async function addToWishlist(product_id) {
    
         console.log('asda', product_id);
         await fetch('/addToWishlist', {
@@ -44,7 +49,7 @@ export default function ProductCardWishlistComp (props) {
             method: 'POST',
             body: JSON.stringify(
                 { 
-                    email: user_id ,
+                    email: user.email ,
                     product_id: product_id,
     
                 }),
@@ -67,10 +72,10 @@ export default function ProductCardWishlistComp (props) {
             console.log('chaneged')
             if (wishStatus) {
                 console.log('as')
-                addToWishlist('ammarsura@gmail.com', props.id);
+                addToWishlist( props.id);
             } else {
                 console.log('remov')
-                removeFromWishlist('ammarsura@gmail.com', props.id);
+                removeFromWishlist( props.id);
             }
         }
        
@@ -80,7 +85,7 @@ export default function ProductCardWishlistComp (props) {
     if (!wishStatus) {
         return (
             <div>
-                <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(true) }>Add to Wishlist
+                <Button variant="secondary" size="lg" style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(true) }>Add to Wishlist
                 </Button>
                 
             </div>
@@ -89,7 +94,7 @@ export default function ProductCardWishlistComp (props) {
     } else {
         return (
             <div>
-                <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(false) }>
+                <Button variant="secondary" size="lg" style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(false) }>
                     Remove from Wishlist
                 </Button>
             </div>

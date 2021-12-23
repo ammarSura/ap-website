@@ -73,7 +73,7 @@ export default function ProductDisplayComp (props) {
         }
 
         const comps = mainlst.map( (prod) => 
-        <ProductCardGroupComp key = {prod[0]._id} lst = {prod} /> );
+        <ProductCardGroupComp key = {prod[0].id} lst = {prod} /> );
 
         return comps;
     }
