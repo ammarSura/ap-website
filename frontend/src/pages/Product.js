@@ -64,17 +64,19 @@ export default function Product() {
     async function addToCart() {
        console.log(cart);
        let quantity = 0;
+      //  let price = 0;
 
       for (let i = 0; i < cart.length; i++) {
         console.log(cart[i]);
         if (cart[i].product_id===prod_id) {
             quantity = cart[i].quantity;
             
+            
         }
         
       }
 
-      console.log(quantity)
+      console.log(product, product.price)
         
       await fetch('/addToCart', {
           
@@ -85,6 +87,7 @@ export default function Product() {
                   product_id: prod_id,
                   quantity: quantity + 1,
                   size: size,
+                  price: product.price,
   
               }),
           headers: {

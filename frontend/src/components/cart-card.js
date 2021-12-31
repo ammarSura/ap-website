@@ -41,10 +41,10 @@ export default function CartCardComp(props) {
 
     
     if ( isLoaded ) {
-        console.log(product)
+        console.log('price', props.price)
         return (
          
-        <Card style={{width : "20em", height : "41em", marginRight:"auto", marginLeft: "auto"}} >
+        <Card style={{width : "20em", height : "38em"}} >
             <Card.Img variant="top" src={product.image01} style = {{width:"15em", marginLeft: "auto", marginRight: "auto" ,marginTop:"10%"}}/>
 
             <Card.Body style={{height:"80px", marginLeft:"15%"}}>
@@ -61,11 +61,11 @@ export default function CartCardComp(props) {
               <Card.Text className="product-card-text">
                   {product.gender}
               </Card.Text>
-              <div style={{display: "grid"}}>
+              {/* <div style={{display: "grid"}}> */}
               {/* <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/> */}
 
-              <ProductCardCounterComp id={props.product_id} quantity={props.quantity} size={props.size}/>
-              </div>
+              <ProductCardCounterComp id={props.product_id} quantity={props.quantity} size={props.size} price={product.price}/>
+              {/* </div> */}
 
             </Card.Body>
         </Card>

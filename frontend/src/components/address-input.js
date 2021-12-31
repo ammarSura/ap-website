@@ -66,7 +66,7 @@ export default function AddressInput() {
    
     
     return(
-        <div style={{marginRight: "20%", marginTop: "10%"}}>
+        <div >
         <h2>Add Address</h2>
         <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
             <li><input type="text" placeholder="Add address name" id="name"/></li>

@@ -3,6 +3,7 @@ import "../App.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { CartContext } from '../contexts/cart-context';
 import CartCardComp from '../components/cart-card';
+import CheckoutComp from "../components/checkout-bar";
 
 
 
@@ -18,8 +19,9 @@ export default function Cart() {
     const [ cart1IsLoaded, setCart1Loading ] = useState(false);
 
     function looper() {
+        console.log('cart1', cart1)
         const items = cart1.map( (item) => 
-        <CartCardComp key = {item.key} product_id={item.product_id} size={item.size} quantity={item.quantity } />
+        <CartCardComp key = {item.key} product_id={item.product_id} size={item.size} quantity={item.quantity } price = {item.price} />
         // <h1 key = {item.key}>{item.product_id}, {item.size}, {item.quantity}</h1>
         
         )
@@ -92,9 +94,15 @@ export default function Cart() {
 
     if (cart1IsLoaded) {
         return (
-            <div style={{marginTop:"15%"}}>
+            <div style={{display: "grid", gridTemplateColumns: "50% 50%", marginTop: "15%", marginLeft: "20%", marginRight:"20%", overflow:"hidden"}}>
+                <div style={{height: "50%", overflow: "auto"}}>
                 {looper()}
+                </div>
+                <div style={{marginLeft: "40%"}}>
+                    <CheckoutComp cart={carter.cart.cart}/>
+                </div>
             </div>
+            
         );
     } else {
         return (

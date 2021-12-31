@@ -29,6 +29,7 @@ const UserSchema = new mongoose.Schema({
             product_id: {type: String},
             size: {type: String},
             quantity: {type: Number},
+            price: {type: Number}
         }
     ],
 
@@ -36,7 +37,14 @@ const UserSchema = new mongoose.Schema({
         {
             product_id: {type: String},
             quantity: {type: String},
-            date: {type: String},
+            size: {type: String},
+            address: [],
+            phone: {type: String},
+            price: {type: Number},
+            date: {
+                type: Number,
+                default: Date.now
+            },
         }
     ],
 

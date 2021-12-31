@@ -32,6 +32,7 @@ export default function ProductCardCounterComp (props) {
                     product_id: product_id,
                     quantity: count,
                     size: size,
+                    price: props.price
                     
     
                 }),
@@ -46,7 +47,7 @@ export default function ProductCardCounterComp (props) {
     }
     
     async function updateCart( product_id, count, size) {
-       console.log(size);
+       console.log("prie", props.price);
         
         await fetch('/addToCart', {
             
@@ -57,6 +58,7 @@ export default function ProductCardCounterComp (props) {
                     product_id: product_id,
                     quantity: count,
                     size: size,
+                    price: props.price
     
                 }),
             headers: {
@@ -107,7 +109,7 @@ export default function ProductCardCounterComp (props) {
     if (count > 0) {
         return (
             <div style={{display: "flex"}}>
-                <div><Button style={{marginLeft: "3em"}}onClick={() => setCount(count + 1)}>+</Button></div>
+                <div><Button style={{marginLeft: "2em"}}onClick={() => setCount(count + 1)}>+</Button></div>
                 <div><h3 style={{paddingLeft: "1em", paddingRight: "1em"}}>{count}</h3></div>
                 <div><Button  onClick={() => setCount(count - 1)}>-</Button></div>
             </div>

@@ -118,6 +118,20 @@ app.post('/update/address', async (req, res) => {
     res.json({status: 'ok'});
 });
 
+app.post('/submitOrder', async (req, res) => {
+  const record = req.body;
+  console.log('rex',record);
+
+  const response = await User.findOneAndUpdate(
+    {email: record.email},
+    {$push: { orders: {product_id: record.product_id, quantity: record.quantity, size: record.size, address: record.address, price: record.price}}}
+  );
+
+  console.log('/submitOrder', response);
+
+  res.json({status: 'ok'});
+});
+
 app.post('/update/details', async (req, res) => {
   const record = req.body;
 
@@ -158,6 +172,20 @@ app.post('/removeFromCart', async (req, res) => {
     {$pull: {cart: {product_id: record.product_id, size: record.size}}})
 
     console.log('/addToCart1', response1);
+
+  
+  res.json({ status: 'ok' });
+});
+
+app.post('/emptyCart', async (req, res) => {
+  const record = req.body;
+  console.log('record: ', record)
+
+  const response1 = await User.findOneAndUpdate(
+    {email: record.email}, 
+    {cart: []  })
+
+    console.log('/emptyCart', response1);
 
   
   res.json({ status: 'ok' });
@@ -212,7 +240,7 @@ app.post('/addToCart', async (req, res) => {
 
   const response = await User.findOneAndUpdate( 
     {email: record.email}, 
-    {$push: { cart: { product_id: record.product_id, size: record.size, quantity: record.quantity } } }
+    {$push: { cart: { product_id: record.product_id, size: record.size, quantity: record.quantity, price: record.price } } }
     );
   
   console.log('/addToCart', response);

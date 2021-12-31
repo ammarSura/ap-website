@@ -21,7 +21,7 @@ export default function ProductCardComp (props) {
 
     function Butter() {
           
-      window.location.replace('/product/'+ link); 
+      window.location.replace('/product/'+ props.id); 
   
     }
 

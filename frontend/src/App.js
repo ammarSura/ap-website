@@ -31,6 +31,7 @@ import Autocomplete from './util/auto';
 import Cart from './pages/Cart';
 import {CartProvider} from "./contexts/cart-context";
 import SearchBar from './components/search-bar';
+import Checkout from './pages/Checkout';
 
 
 
@@ -68,6 +69,7 @@ export default function App() {
         <Route exact path="/wishlist" element={<Wishlist/>}/>
         <Route exact path="/user-details" element={<UserDetails/>}/>
         <Route exact path="/cart" element={<Cart/>} />
+        <Route exact path="/checkout" element={<Checkout/>} />
 
         </Routes>
 
