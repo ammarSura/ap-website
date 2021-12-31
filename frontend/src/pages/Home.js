@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import CarouselComp from "../components/carousel";
+import SignUpCarouselComp from "../components/sign-up-carousel";
 import CardComp from "../components/cards";
 import CirclesComp from "../components/circles";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -48,8 +49,20 @@ export default function Home() {
     
     return (
       <div style={{marginBottom: "5%"}}>
-          
-        <LoginButton/>
+         <div style={{display: "flex", flexDirection: "column", marginLeft: "15%", marginRight: "15%", marginTop: "2.5%"}}>
+         <div style={{marginTop: "2.5%", marginBottom: "2.5%"}}>
+            <SignUpCarouselComp/>
+          </div> 
+          <div style={{marginTop: "1%", marginBottom: "1%"}}>
+            <h1>Sign in to shop!</h1>
+          </div>  
+          <div style={{marginTop: "1%", marginBottom: "2.5%"}}> 
+            <LoginButton/>
+          </div>     
+            
+        </div>
+         
+       
         
             
       </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../App.css"
 import Order from "./order";
 
-export default class Orders extends Component{
+export default function Orders(props){
 
     // componentDidMount() {
     //     fetch('/getProduct/' + this.props.id)
@@ -16,21 +16,31 @@ export default class Orders extends Component{
     // }
     
     
-    looper() {
+    function looper() {
 
-        const orders = this.props.orders.map( (order) => 
+        const orders = props.orders.map( (order) => 
         <Order key = {order._id} id = {order._id} date = {order.date} />)
 
         return orders;
     }
 
-    render(){
+    if (props.orders.length > 0) {
         return(
             <div style={{marginRight: "30%"}}>
                 <h2>Your Orders</h2>
                 <br/>
-                {this.looper()}
+                {looper()}
+            </div>
+        );  
+    } else {
+        return(
+            <div style={{marginRight: "30%"}}>
+                <h2>Your Orders</h2>
+                <br/>
+                <p>None, yet</p>
             </div>
         );  
     }
+    
+    
 }

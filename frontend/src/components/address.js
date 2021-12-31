@@ -1,21 +1,22 @@
 import React, { Component } from "react"; 
 import "../App.css"
 
-export default class Address extends Component{
+export default function Address(props){
    
-    render(){
+    
         return(
             <div>
                 
                 <ul style={{listStyleType:"none"}}>
-                    <li><h3>{this.props.name}</h3></li>
-                    <li>{this.props.line1}</li>
-                    <li>{this.props.line2}</li>
-                    <li>{this.props.city}</li>
-                    <li>{this.props.pincode}</li>
-                    <li>{this.props.state}</li>
+                    <li><h3>{props.name}</h3></li>
+                    <li>{props.name}</li>
+                    <li>{props.line1}</li>
+                    <li>{props.line2}</li>
+                    <li>{props.city}</li>
+                    <li>{props.pincode}</li>
+                    <li>{props.state}</li>
                 </ul>
             </div>
         );  
-    }
+    
 }

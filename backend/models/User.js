@@ -15,6 +15,7 @@ const UserSchema = new mongoose.Schema({
 	email: {type: String},
     addresses: [
         {
+            name: {type: String},
             line1: {type: String},
             line2: {type: String},
             city: {type: String},
@@ -26,7 +27,8 @@ const UserSchema = new mongoose.Schema({
     cart: [
         {
             product_id: {type: String},
-            size: {type: String}
+            size: {type: String},
+            quantity: {type: Number},
         }
     ],
 

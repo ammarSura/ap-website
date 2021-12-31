@@ -106,6 +106,7 @@ app.post('/update/email', async (req, res) => {
 
 app.post('/update/address', async (req, res) => {
     const record = req.body;
+    console.log(record);
 
     const response = await User.findOneAndUpdate(
       {email: record.email},
@@ -152,41 +153,66 @@ app.post('/removeFromCart', async (req, res) => {
   const record = req.body;
   console.log('record: ', record)
 
-  const response1 = await User.findOneAndUpdate({email: record.email}, 
-  {$pull: { cart: { product_id: record.product_id }}});
+  const response1 = await User.findOneAndUpdate(
+    {email: record.email}, 
+    {$pull: {cart: {product_id: record.product_id, size: record.size}}})
 
-  console.log('/removeFromCart', response1);
+    console.log('/addToCart1', response1);
+
+  
+  res.json({ status: 'ok' });
 });
 
-app.post('/updateCart', async (req, res) => {
-  const record = req.body;
-  console.log('record: ', record)
+// app.post('/updateCart', async (req, res) => {
+//   const record = req.body;
+//   console.log('record: ', record)
 
-  const response1 = await User.findOneAndUpdate({email: record.email}, 
-  {$pull: { cart: { product_id: record.product_id }}});
+//   const response1 = await User.findOneAndUpdate({email: record.email}, 
+//   {$pull: { cart: { product_id: record.product_id }}});
 
-  console.log('/updateCart', response1);
+//   console.log('/updateCart', response1);
 
   
 
-  const response2 = await User.findOneAndUpdate( {email: record.email}, 
-  {$push: { cart: {product_id: record.product_id, quantity: record.quantity }}});
+//   const response2 = await User.findOneAndUpdate( {email: record.email}, 
+//   {$push: { cart: { product_id: record.product_id, size: record.size, quantity: record.quantity } } });
   
-  console.log('/updateCart', response2);
-  res.json({ status: 'ok' });
+//   console.log('/updateCart', response2);
+//   res.json({ status: 'ok' });
 
  
-})
+// })
+
+// app.post('/addToCart', async (req, res) => {
+//   const record = req.body;
+//   console.log('record: ', record)
+
+//   // const response1 = await User.findOneAndUpdate({email: record.email}, {$pull: {cart: {product_id: record.product_id, size: "XS"}}})
+
+//   const response = await User.findOneAndUpdate( 
+//     {email: record.email}, 
+//     {$push: { cart: { product_id: record.product_id, size: record.size, cart_id: record.cart_id } } }
+//     );
+  
+//   console.log('/addToCart', response);
+//   res.json({ status: 'ok' });
+
+ 
+// })
 
 app.post('/addToCart', async (req, res) => {
   const record = req.body;
   console.log('record: ', record)
 
-  
+  const response1 = await User.findOneAndUpdate(
+    {email: record.email}, 
+    {$pull: {cart: {product_id: record.product_id, size: record.size}}})
+
+    console.log('/addToCart1', response1);
 
   const response = await User.findOneAndUpdate( 
     {email: record.email}, 
-    {$push: { cart: { product_id: record.product_id, size: record.size } } }
+    {$push: { cart: { product_id: record.product_id, size: record.size, quantity: record.quantity } } }
     );
   
   console.log('/addToCart', response);
@@ -210,30 +236,30 @@ app.post('/addReview', async (req, res) => {
  
 })
 
-app.post('/removeFromCart', async (req, res) => {
-  const record = req.body;
+// app.post('/removeFromCart', async (req, res) => {
+//   const record = req.body;
 
-  console.log('/removeProduct');
+//   console.log('/removeProduct');
 
-  const response = await User.findOneAndUpdate(
-      {_id: record._id}, 
-      {$pull: { cart: { product_id: record.product_id }}});
+//   const response = await User.findOneAndUpdate(
+//       {_id: record._id}, 
+//       {$pull: { cart: { product_id: record.product_id }}});
 
-console.log('/removeFromCart', response)
+// console.log('/removeFromCart', response)
 
-res.json({ status: 'ok' });
-});
+// res.json({ status: 'ok' });
+// });
 
-app.get('/getCart', async (req, res) => {
-  const record = req.body;
+// app.get('/getCart', async (req, res) => {
+//   const record = req.body;
 
-  const response = await User.findOne(
-      {_id: record._id});
+//   const response = await User.findOne(
+//       {_id: record._id});
 
-  console.log('/getCart', response);
+//   console.log('/getCart', response);
 
-  res.json(respons.cart);
-});
+//   res.json(respons.cart);
+// });
 
 // routes for wishlist
 

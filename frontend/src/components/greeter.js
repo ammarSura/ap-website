@@ -84,6 +84,8 @@ export default function Greeter(props) {
         document.getElementById("lastname").value = '';
         document.getElementById("birthday").value = '';
         document.getElementById("gender").value = '';
+
+        console.log(details);
     }
 
     function Butter2() {
@@ -94,6 +96,7 @@ export default function Greeter(props) {
         }
 
         setUser(details);
+        console.log(details);
         setLoading(true);
 
        
@@ -104,15 +107,30 @@ export default function Greeter(props) {
     if (user_state.first_name === '') {
         return (
             <div>
-                <h3>Tell us about yourself</h3>
-                <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
-                <li><input type="text" placeholder="First Name" id="firstname"/></li>
-                <li><input type="text" placeholder="Last Name" id="lastname"/></li>
-                <li><input type="text" placeholder="Your Birthday" id="birthday"/></li>
-                <li><input type="text" placeholder="Gender" id="gender"/></li>
-                </ul>
+                <h2>Tell us about yourself</h2>
+                {/* <ul style={{listStyleType:"none", lineHeight: "15%" ,lineWidth: "15%"}}> */}
+                {/* <li><input type="text" placeholder="First Name" id="firstname"/></li>
+                <li><input type="text" placeholder="Last Name" id="lastname"/></li> */}
+                {/* <li><input type="date" value="2017-06-01" id="birthday"/></li> */}
+                {/* <li><input type="text" placeholder="Gender" id="gender"/></li> */}
+                {/* </ul> */}
+                <div style={{display: "flex", flexDirection: "column"}}>
+                    <div><input type="text" placeholder="First Name" id="firstname"/></div>
+                    <div><input type="text" placeholder="Last Name" id="lastname"/></div>
+                    <div><input type="date" id="birthday"/></div>
+                    {/* <div><input type="text" placeholder="Gender" id="gender"/></div> */}
+                    <div><select placeholder="Gender" id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    </div>
+                    <div><button onClick={() => Butter1()}>Submit</button></div>
+                {/* <div></div> */}
+            </div>
+                
 
-                <button onClick={() => Butter1()}>Submit</button>
+                
             </div>
             
         );

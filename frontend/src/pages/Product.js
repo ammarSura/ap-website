@@ -62,7 +62,19 @@ export default function Product() {
     }
 
     async function addToCart() {
-       console.log('okay')
+       console.log(cart);
+       let quantity = 0;
+
+      for (let i = 0; i < cart.length; i++) {
+        console.log(cart[i]);
+        if (cart[i].product_id===prod_id) {
+            quantity = cart[i].quantity;
+            
+        }
+        
+      }
+
+      console.log(quantity)
         
       await fetch('/addToCart', {
           
@@ -71,7 +83,7 @@ export default function Product() {
               { 
                   email: user.email ,
                   product_id: prod_id,
-                  // quantity: count,
+                  quantity: quantity + 1,
                   size: size,
   
               }),
@@ -152,17 +164,18 @@ export default function Product() {
           console.log('okay')
           setCartLoading(carter.cartIsLoaded);
           setCart(carter.cart.cart);
-        } else {
-          for (let i = 0; i < cart.length; i++ ) {
-            // console.log('aok', cart[i])
-            if (prod_id===cart[i].product_id) {
-              // setAddedToCart("Added to Cart");
-              setQuantity(cart[i].quantity);
-              setSizes(cart[i].sizes);
-              // console.log('q', quantity);
-            }
-          }
-        }
+        } 
+        // else {
+        //   for (let i = 0; i < cart.length; i++ ) {
+        //     // console.log('aok', cart[i])
+        //     if (prod_id===cart[i].product_id) {
+        //       // setAddedToCart("Added to Cart");
+        //       setQuantity(cart[i].quantity);
+        //       setSizes(cart[i].sizes);
+        //       // console.log('q', quantity);
+        //     }
+        //   }
+        // }
         if ( !wishlistIsLoaded ) {
           setWishlistLoading(carter.wishlistIsLoaded);
           setWishlist(carter.wishlist.wishlist);

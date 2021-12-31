@@ -146,7 +146,7 @@ export default function NavbarComp() {
     )
   } else {
     return ( 
-      <h1>Sign in to shop!</h1>
+      null
        
       );
   }

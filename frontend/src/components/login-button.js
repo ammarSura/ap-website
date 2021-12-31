@@ -7,8 +7,8 @@ const LoginButton = () => {
   
 
   return (
-  <button style={{border: "none", backgroundColor: "#ede5d5"}}onClick={() => loginWithRedirect()}>
-    Signin
+  <button style={{border: "none", backgroundColor: "#ede5d5", fontSize: "150%"}}onClick={() => loginWithRedirect()}>
+    Sign-in
   </button>);
   
 };

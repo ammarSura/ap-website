@@ -41,17 +41,24 @@ export default function Profile() {
       } else {
 
         return (
-            <div style={{marginBottom: "5%", marginTop: "10%", marginLeft: "20%", marginRight: "20%"}}>
+            // <div style={{marginBottom: "5%", marginTop: "10%", marginLeft: "20%", marginRight: "20%"}}>
+                <div style={{display: "grid", gridTemplateColumns: "50% 50%", marginBottom: "5%", marginTop: "15%", marginLeft: "20%"}}>
                 
-                <Greeter user_db={user_state}/>
+                <div>
+                  <Orders orders={user_state.orders}/>
+                  <Addresses addresses={user_state.addresses}/> 
+                  
+                </div>
+                <div>
+                  <Greeter user_db={user_state}/>
+                  <AddressInput/>
+                </div>
                 
-                <Orders orders={user_state.orders}/>
                 
-                <Addresses addresses={user_state.addresses}/> 
+                </div>
+                
 
-                <AddressInput/>
-
-            </div>
+            // </div>
           );
     }
     

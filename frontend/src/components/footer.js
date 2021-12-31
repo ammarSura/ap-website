@@ -40,7 +40,7 @@ export default function FooterComp() {
         );  
     } else {
         return (
-            <h1>Hello!</h1>
+            null
         );
     }
 

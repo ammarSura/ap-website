@@ -63,15 +63,28 @@ export default function UserDetails() {
             return (
             <div style={{marginLeft: "20%", marginRight: "20%", marginTop: "10%"}}>
             <h1>Your Details</h1>
-           <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
+           {/* <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
                 <li>First Name: <input type="text" disabled value={user_state.first_name} id="first_name"/></li>
                 <li>Last Name: <input type="text" disabled value={user_state.last_name} id="last_name"/></li>
                 <li>Gender: <input type="text" disabled value={user_state.gender} id="gender"/></li>
                 <li>Birthday: <input type="text" disabled value={user_state.birthday} id="birthday"/></li>
                 <li>Email: <input type="text" disabled value={user_state.email} id="email"/></li>
                 {/* <li>Phone Number<input type="text" placeholder="State" id="state"/></li> */}
-           </ul>
-           <Button onClick={() => setInputState(true)}>Change Details</Button>
+           {/* </ul> */}
+
+           {/* <Button onClick={() => setInputState(true)}>Change Details</Button> */}
+
+           <div style={{display: "flex", flexDirection: "column"}}>
+                    <div>First Name: <input type="text" disabled value={user_state.first_name} id="first_name"/></div>
+                    <div>Last Name: <input type="text" disabled value={user_state.last_name} id="last_name"/></div>
+                    <div>Birthday: <input type="text" disabled value={user_state.birthday} id="birthday"/></div>
+                    {/* <div><input type="text" placeholder="Gender" id="gender"/></div> */}
+                    <div>Gender: <input type="text" disabled value={user_state.gender} id="gender"/>
+                    </div>
+                    <div>Email: <input type="text" disabled value={user_state.email} id="email"/></div>
+                    <div><Button onClick={() => setInputState(true)}>Change Details</Button></div>
+                {/* <div></div> */}
+            </div>
 
             
             </div> 
@@ -81,16 +94,32 @@ export default function UserDetails() {
             return (
                 <div style={{marginLeft: "20%", marginRight: "20%", marginTop: "10%"}}>
                 <h1>Your Details</h1>
-               <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
+               {/* <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
                <li>First Name: <input type="text" placeholder={user_state.first_name} id="first_name"/></li>
                 <li>Last Name: <input type="text" placeholder={user_state.last_name} id="last_name"/></li>
                 <li>Gender: <input type="text" placeholder={user_state.gender} id="gender"/></li>
                 <li>Birthday: <input type="text" disabled placeholder={user_state.birthday} id="birthday"/></li>
                 <li>Email: <input type="text" disabled placeholder={user_state.email} id="email"/></li>
                     {/* <li>Phone Number<input type="text" placeholder="State" id="state"/></li> */}
-               </ul>
+               {/* </ul> */}
                
-               <Button onClick={() =>Butter()}>Submit</Button>
+               {/* <Button onClick={() =>Butter()}>Submit</Button>  */}
+
+               <div style={{display: "flex", flexDirection: "column"}}>
+                    <div>First Name: <input type="text" value={user_state.first_name} id="first_name"/></div>
+                    <div>Last Name: <input type="text" value={user_state.last_name} id="last_name"/></div>
+                    <div>Birthday: <input type="text" disabled value={user_state.birthday} id="birthday"/></div>
+                    {/* <div><input type="text" placeholder="Gender" id="gender"/></div> */}
+                    <div>Gender: <select placeholder="Gender" id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    </div>
+                    <div>Email: <input type="text" disabled value={user_state.email} id="email"/></div>
+                    <div><Button onClick={() => Butter()}>Submit</Button></div>
+                {/* <div></div> */}
+            </div>
                 </div> 
             );
         }
