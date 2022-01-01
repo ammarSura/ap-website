@@ -80,25 +80,25 @@ export default function AddressInput() {
         </ul> */}
 
         <div style={{display: "flex", flexDirection: "column"}}>
-                    <div>
+                    <div style={{marginBottom: "1%"}}>
                         <input type="text" placeholder="Add address name" id="name"/>
                     </div>
-                    <div>
+                    <div style={{marginBottom: "1%"}}>
                         <input type="text" placeholder="Line 1" id="line1"/>
                     </div>
-                    <div>
+                    <div style={{marginBottom: "1%"}}>
                         <input type="text" placeholder="Line 2" id="line2"/>
                     </div>
-                    <div>
+                    <div style={{marginBottom: "1%"}}>
                         <input type="text" placeholder="Country" id="country"/>
                     </div>
-                    <div>
+                    <div style={{marginBottom: "1%"}}>
                         <input type="text" placeholder="State" id="state"/>
                     </div>
-                    <div>
+                    <div style={{marginBottom: "1%"}}>
                         <input type="text" placeholder="City" id="city"/>   
                     </div>
-                    <div>
+                    <div style={{marginBottom: "1%"}}>
                         <input type="text" placeholder="Pincode" id="pincode"/>
                     </div>
                 </div>

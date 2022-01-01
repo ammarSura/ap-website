@@ -5,17 +5,17 @@ export default function Address(props){
    
     
         return(
-            <div>
+            <div style={{display: "flex", flexDirection: "column"}}>
                 
-                <ul style={{listStyleType:"none"}}>
-                    <li><h3>{props.name}</h3></li>
-                    <li>{props.name}</li>
-                    <li>{props.line1}</li>
-                    <li>{props.line2}</li>
-                    <li>{props.city}</li>
-                    <li>{props.pincode}</li>
-                    <li>{props.state}</li>
-                </ul>
+                {/* <ul style={{listStyleType:"none"}}> */}
+                
+                    <div><b>Address name: {props.name}</b></div>
+                    
+                    <div>Line 1: {props.line1}</div>
+                    <div>Line 2: {props.line2}</div>
+                    <div>City: {props.city}</div>
+                    <div>Pincode: {props.pincode}</div>
+                    <div>State: {props.state}</div>
             </div>
         );  
     

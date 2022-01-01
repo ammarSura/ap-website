@@ -41,6 +41,10 @@ export default function UserDetails() {
         Check(add);
         
     }
+
+    function Butter1() {
+        window.location.replace('/profile')
+    }
     
     
 
@@ -75,14 +79,14 @@ export default function UserDetails() {
            {/* <Button onClick={() => setInputState(true)}>Change Details</Button> */}
 
            <div style={{display: "flex", flexDirection: "column"}}>
-                    <div>First Name: <input type="text" disabled value={user_state.first_name} id="first_name"/></div>
-                    <div>Last Name: <input type="text" disabled value={user_state.last_name} id="last_name"/></div>
-                    <div>Birthday: <input type="text" disabled value={user_state.birthday} id="birthday"/></div>
+                    <div style={{marginBottom: "1%"}}>First Name: <input type="text" disabled value={user_state.first_name} id="first_name"/></div>
+                    <div style={{marginBottom: "1%"}}>Last Name: <input type="text" disabled value={user_state.last_name} id="last_name"/></div>
+                    <div style={{marginBottom: "1%"}}>Birthday: <input type="text" disabled value={user_state.birthday} id="birthday"/></div>
                     {/* <div><input type="text" placeholder="Gender" id="gender"/></div> */}
-                    <div>Gender: <input type="text" disabled value={user_state.gender} id="gender"/>
+                    <div style={{marginBottom: "1%"}}>Gender: <input type="text" disabled value={user_state.gender} id="gender"/>
                     </div>
-                    <div>Email: <input type="text" disabled value={user_state.email} id="email"/></div>
-                    <div><Button onClick={() => setInputState(true)}>Change Details</Button></div>
+                    <div style={{marginBottom: "1%"}}>Email: <input type="text" disabled value={user_state.email} id="email"/></div>
+                    <div style={{marginBottom: "1%"}}><button onClick={() => setInputState(true)}>Change Details</button></div>
                 {/* <div></div> */}
             </div>
 
@@ -106,18 +110,19 @@ export default function UserDetails() {
                {/* <Button onClick={() =>Butter()}>Submit</Button>  */}
 
                <div style={{display: "flex", flexDirection: "column"}}>
-                    <div>First Name: <input type="text" value={user_state.first_name} id="first_name"/></div>
-                    <div>Last Name: <input type="text" value={user_state.last_name} id="last_name"/></div>
-                    <div>Birthday: <input type="text" disabled value={user_state.birthday} id="birthday"/></div>
+                    <div style={{marginBottom: "1%"}}>First Name: <input type="text" value={user_state.first_name} id="first_name"/></div>
+                    <div style={{marginBottom: "1%"}}>Last Name: <input type="text" value={user_state.last_name} id="last_name"/></div>
+                    <div style={{marginBottom: "1%"}}>Birthday: <input type="text" disabled value={user_state.birthday} id="birthday"/></div>
                     {/* <div><input type="text" placeholder="Gender" id="gender"/></div> */}
-                    <div>Gender: <select placeholder="Gender" id="gender">
+                    <div style={{marginBottom: "1%"}}>Gender: <select placeholder="Gender" id="gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
                     </select>
                     </div>
-                    <div>Email: <input type="text" disabled value={user_state.email} id="email"/></div>
-                    <div><Button onClick={() => Butter()}>Submit</Button></div>
+                    <div style={{marginBottom: "1%"}}>Email: <input type="text" disabled value={user_state.email} id="email"/></div>
+                    <div style={{marginBottom: "1%"}}><button onClick={() => Butter()}>Submit</button></div>
+                    <div style={{marginBottom: "1%"}}><button onClick={() => Butter1()}>Back to your Profile</button></div>
                 {/* <div></div> */}
             </div>
                 </div> 

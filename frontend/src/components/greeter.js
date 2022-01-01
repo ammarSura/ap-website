@@ -107,26 +107,48 @@ export default function Greeter(props) {
     if (user_state.first_name === '') {
         return (
             <div>
-                <h2>Tell us about yourself</h2>
+                {/* <Row>
+                    <Col>
+                        
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col>
+                        <Row>
+                            First Name:
+                        </Row>
+                    
+                    </Col>
+
+                    <Col>
+                        <Row>
+                            <input type="text" placeholder="First Name" id="firstname"/>
+                        </Row>
+                    
+                    </Col>
+                </Row>
+                 */}
                 
                 <div style={{display: "flex", flexDirection: "column"}}>
-                    <div>
-                        <input type="text" placeholder="First Name" id="firstname"/>
+                <h2>Tell us about yourself</h2>
+                    <div style={{marginBottom: "1%"}}>
+                        First Name: <input type="text" placeholder="First Name" id="firstname"/>
                     </div>
-                    <div>
-                        <input type="text" placeholder="Last Name" id="lastname"/>
+                    <div style={{marginBottom: "1%"}}>
+                        Last Name: <input type="text" placeholder="Last Name" id="lastname"/>
                     </div>
-                    <div>
-                        <input type="date" id="birthday"/>
+                    <div style={{marginBottom: "1%"}}>
+                        Birthday: <input type="date" id="birthday" placeholder="Birthday"/>
                     </div>
-                    <div>
-                        <select placeholder="Gender" id="gender">
+                    <div style={{marginBottom: "1%"}}>
+                        Gender: <select placeholder="Gender" id="gender">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <div>
+                    <div style={{marginBottom: "1%"}}>
                         <button onClick={() => Butter1()}>Submit</button>
                     </div>
                 </div>
