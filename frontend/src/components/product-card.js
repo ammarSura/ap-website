@@ -4,6 +4,7 @@ import { Card, Button} from "react-bootstrap";
 import "../App.css";
 import ProductCardCounterComp from './product-card-counter';
 import ProductCardWishlistComp from './product-card-wishlist';
+import RatingComp from './rating';
 
 
 // export default class ProductCardComp extends Component {
@@ -26,6 +27,7 @@ export default function ProductCardComp (props) {
     }
 
     if (isLoaded === true) {
+      // console.log()
       return (
        
         <Card style={{width : "20em", height : "41em"}} >
@@ -44,6 +46,10 @@ export default function ProductCardComp (props) {
               </Card.Text>
               <Card.Text className="product-card-text">
                   {props.gender}
+              </Card.Text>
+              <Card.Text className="product-card-text">
+                  {props.rating}
+                  <RatingComp rating={props.rating}/>
               </Card.Text>
               <div style={{display: "grid"}}>
               <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/>

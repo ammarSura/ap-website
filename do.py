@@ -1,7 +1,8 @@
 import json
+import random
  
 # Opening JSON file
-f = open('data.json')
+f = open('Products1.json')
  
 # returns JSON object as
 # a dictionary
@@ -13,8 +14,12 @@ for i in data:
     # print(i["_id"])
     # i[ "id" ] = str(i["_id"])
     # i["sizes"] = ['XS', 'S', 'M', 'L', 'XL']
-    del i["reviews"]
-    i["reviews"] = []
+    del i["rating"]
+    r = random.random() * 5 + 2
+
+    if r > 5 :
+        r = 4 + random.random()
+    i["rating"] = round(r, 1)
     
  
 # Closing file

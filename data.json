@@ -1,5 +1,8 @@
 [
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08d8"
+        },
         "type": "Jacket",
         "name": "Down jacket",
         "description": "High-collared jacket in woven fabric with a filling of 80% down and 20% feathers. Zip and wind flap with concealed press-studs down the front, dropped shoulders and discreet pockets in the side seams. Concealed elastication at the cuffs and hem. Lined.",
@@ -10,7 +13,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692608/Products/Images/01/model02_htb3c8.jpg",
         "price": 7999,
         "composition": "Shell: Cotton 70%, Polyamide 30%Padding: Down 80%, Feather 20%Lining: Polyester 100%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "1",
@@ -21,9 +23,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.1
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08d9"
+        },
         "type": "Jacket",
         "name": "Oversized bomber jacket",
         "description": "Oversized bomber jacket in a printed weave with embroidered details. Ribbed stand-up collar, press-studs down the front, dropped shoulders, long sleeves and diagonal front pockets with a concealed zip. Ribbing at the cuffs and hem. Lined.",
@@ -34,7 +40,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692598/Products/Images/02/model02_bmidhp.jpg",
         "price": 3999,
         "composition": "Shell: Polyester 100%Padding: Polyester 100%Lining: Polyester 100%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "2",
@@ -45,9 +50,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.6
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08da"
+        },
         "type": "Jacket",
         "name": "Boxy puffer jacket",
         "description": "Boxy-style puffer jacket in woven fabric with a drawstring hood, zip down the front and zipped front pockets. Ribbing at the cuffs and an elasticated drawstring at the hem. Lined.",
@@ -58,7 +67,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692597/Products/Images/03/model02_wwmbqq.jpg",
         "price": 2999,
         "composition": "Shell: Polyester 100%Lining: Polyester 100%Padding: Polyester 100%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "3",
@@ -69,9 +77,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.0
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08db"
+        },
         "type": "Jacket",
         "name": "Quilted grape leather puffer jacket",
         "description": "Edition by John Boyega. An uncompromising collection made from more sustainable materials developed together with actor and innovator, John Boyega. This quilted puffer jacket is in Vegea\u2122 imitation leather, a material made from bio-waste produced during the winemaking process. The jacket has a stand-up collar, a zip and wind flap with press-studs down the front, fleece-lined front pockets with a press-stud and an inner pocket. Elasticated ribbing at the cuffs and a concealed elastic drawstring at the hem for an adjustable fit. The sleeves can be unzipped and detached to allow the jacket to be worn as a gilet. Lined.",
@@ -82,7 +94,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692597/Products/Images/04/model02_rc39wp.jpg",
         "price": 22999,
         "composition": "Coating: Polyurethane 100%Shell: Polyester 90%, Elastane 10%Lining: Polyester 100%Padding: Polyester 100%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "4",
@@ -93,9 +104,21 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [
+            {
+                "name": "ammar",
+                "reviewString": "Great Product!",
+                "_id": {
+                    "$oid": "61b47abaa66c7ec7d5b127ce"
+                }
+            }
+        ],
+        "rating": 4.8
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08dc"
+        },
         "type": "Jacket",
         "name": "Imitation suede biker jacket",
         "description": "Jacket in soft imitation suede with a diagonal zip down the front, notch lapels with press-studs and long sleeves with a zip at the cuffs. Diagonal, zipped chest pocket and side pockets, small flap coin pocket with a press-stud and one inner pocket. Lined.",
@@ -106,7 +129,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692598/Products/Images/05/model02_klaivb.jpg",
         "price": 5499,
         "composition": "Shell: Polyester 90%, Elastane 10%Lining: Polyester 100%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "5",
@@ -117,9 +139,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 2.4
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08dd"
+        },
         "type": "Jacket",
         "name": "Lined corduroy jacket",
         "description": "Jacket in cotton corduroy with a soft, faux shearling lining. Buttons down the front, a yoke front and back, flap chest pockets with a button, and diagonal welt front pockets. Long sleeves with buttoned cuffs, and an adjustable tab at the sides of the hem.",
@@ -130,7 +156,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692607/Products/Images/06/model02_fqlt1a.jpg",
         "price": 3999,
         "composition": "Padding: Polyester 100%Lining: Polyester 100%Shell: Cotton 100%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "6",
@@ -141,9 +166,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 2.0
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08de"
+        },
         "type": "Sweatshirt",
         "name": "Zip-top sweatshirt",
         "description": "Top in sweatshirt fabric made from a cotton blend with a stand-up collar, zip at the top and a yoke front and back. Dropped shoulders and long sleeves with ribbed cuffs.",
@@ -154,7 +183,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692605/Products/Images/07/model02_oxdle4.jpg",
         "price": 1499,
         "composition": "Cotton 85%, Polyester 15%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "7",
@@ -165,9 +193,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.7
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08df"
+        },
         "type": "Sweatshirt",
         "name": "Printed sweatshirt",
         "description": "Top in soft, printed sweatshirt fabric with a round neckline, dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem.",
@@ -178,7 +210,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692607/Products/Images/08/model02_wcr2x9.jpg",
         "price": 799,
         "composition": "Cotton 62%, Polyester 38%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "8",
@@ -189,9 +220,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 2.1
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e0"
+        },
         "type": "Sweatshirt",
         "name": "Oversized sweatshirt",
         "description": "Oversized top in sweatshirt fabric made from a cotton blend with a ribbed stand-up collar, low dropped shoulders and long, wide sleeves. Ribbing around the cuffs and hem. Soft brushed inside.",
@@ -202,7 +237,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692606/Products/Images/09/model02_rts5va.jpg",
         "price": 1999,
         "composition": "Shell: Cotton 60%, Polyester 40%Neck lining: Cotton 100%Neck lining: Cotton 57%, Polyester 38%, Elastane 5%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "9",
@@ -213,9 +247,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.9
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e1"
+        },
         "type": "Sweatshirt",
         "name": "Relaxed Fit Sweatshirt",
         "description": "Relaxed-fit top in sweatshirt fabric made from a cotton blend with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
@@ -226,7 +264,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692602/Products/Images/10/model02_fr6zgo.jpg",
         "price": 799,
         "composition": "Cotton 75%, Polyester 22%, Viscose 3%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "10",
@@ -237,9 +274,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.2
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e2"
+        },
         "type": "Sweatshirt",
         "name": "THERMOLITE\u00ae Relaxed Fit sweatshirt",
         "description": "Top in sweatshirt fabric with a soft brushed inside. Relaxed fit with a round, rib-trimmed neckline, dropped shoulders, long sleeves and ribbing at the cuffs and hem. Made using THERMOLITE\u00ae technology, this product has been developed to keep you warm with minimum bulk and weight.",
@@ -250,7 +291,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692600/Products/Images/11/model02_uzzznq.jpg",
         "price": 2299,
         "composition": "Cotton 60%, Polyester 40%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "11",
@@ -261,9 +301,35 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [
+            {
+                "name": "ammar",
+                "reviewString": "my review",
+                "_id": {
+                    "$oid": "61b473b1f2889138d4e3fe80"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "another one",
+                "_id": {
+                    "$oid": "61b473d5f2889138d4e3fefe"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "ASD",
+                "_id": {
+                    "$oid": "61b474a2f2889138d4e3ff46"
+                }
+            }
+        ],
+        "rating": 4.9
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e3"
+        },
         "type": "Sweatshirt",
         "name": "Printed sweatshirt",
         "description": "Top in sweatshirt fabric made from a cotton blend with a print motif. Round, rib-trimmed neckline, dropped shoulders, long sleeves and ribbing at the cuffs and hem. Soft brushed inside.",
@@ -274,7 +340,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692610/Products/Images/12/model02_qyzo5e.jpg",
         "price": 1999,
         "composition": "Cotton 59%, Polyester 41%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "12",
@@ -285,9 +350,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.6
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e4"
+        },
         "type": "Hoodie",
         "name": "Motif Detail Hoodie",
         "description": "Hoodie in sweatshirt fabric made from a cotton blend with a motif on the front and a soft brushed inside. Double-layered, drawstring hood, dropped shoulders, long sleeves and ribbing at the cuffs and hem.",
@@ -298,7 +367,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692610/Products/Images/13/model02_x3tafk.jpg",
         "price": 1499,
         "composition": "Hood lining: Cotton 60%, Polyester 40%Shell: Cotton 60%, Polyester 40%",
-        "rating": 0,
         "buyers": 0,
         "__v": "",
         "id": "13",
@@ -309,9 +377,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.2
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e5"
+        },
         "type": "Hoodie",
         "name": "Zip-through hoodie",
         "description": "Zip-through hoodie in sweatshirt fabric. Lined, drawstring hood, a zip down the front, dropped shoulders, long sleeves and front pockets. Ribbing at the cuffs and hem. Soft brushed inside.",
@@ -322,7 +394,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692611/Products/Images/14/model02_xz6nmr.jpg",
         "price": 1499,
         "composition": "Cotton 72%, Polyester 28%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "14",
@@ -333,9 +404,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.0
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e6"
+        },
         "type": "Hoodie",
         "name": "Cropped hoodie",
         "description": "Cropped hoodie in soft, patterned sweatshirt fabric with a drawstring hood, dropped shoulders, long sleeves and ribbing at the cuffs and hem. Soft brushed inside.",
@@ -346,7 +421,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692609/Products/Images/15/model02_grj6nt.jpg",
         "price": 1299,
         "composition": "Recycled polyester 38%Recycled cotton 34%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "15",
@@ -357,9 +431,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.4
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e7"
+        },
         "type": "Hoodie",
         "name": "Relaxed Fit Hoodie",
         "description": "Hoodie in sweatshirt fabric made from a cotton blend. Relaxed fit with a lined, drawstring hood, long sleeves, kangaroo pocket and ribbing at the cuffs and hem. Soft brushed inside.",
@@ -370,7 +448,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692601/Products/Images/16/model02_kkacv8.jpg",
         "price": 1499,
         "composition": "Shell: Cotton 60%, Polyester 40%Hood lining: Cotton 60%, Polyester 40%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "16",
@@ -381,9 +458,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.5
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e8"
+        },
         "type": "Hoodie",
         "name": "Relaxed Fit Hoodie",
         "description": "Hoodie in soft faux shearling with a kangaroo pocket. Hood with an elastic drawstring, long sleeves with concealed elastication at the cuffs, and an elastic drawstring at the hem.",
@@ -394,7 +475,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692601/Products/Images/17/model02_sadfi8.jpg",
         "price": 1999,
         "composition": "Polyester 100%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "17",
@@ -405,9 +485,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.5
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08e9"
+        },
         "type": "Hoodie",
         "name": "Hoodie",
         "description": "Long-sleeved hoodie in soft sweatshirt fabric with a kangaroo pocket, double-layered drawstring hood with a wrapover front, and ribbing at the cuffs and hem. Soft brushed inside.",
@@ -418,7 +502,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692599/Products/Images/18/model02_l1i9wj.jpg",
         "price": 2299,
         "composition": "Hood lining: Cotton 57%, Polyester 43%Shell: Cotton 57%, Polyester 43%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "18",
@@ -429,9 +512,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.4
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08ea"
+        },
         "type": "Trousers",
         "name": "Velour joggers",
         "description": "Joggers in soft velour. High waist with covered elastication, pockets in the side seams and tapered legs with cuffed hems.",
@@ -442,7 +529,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692602/Products/Images/19/model02_pudyz2.jpg",
         "price": 2299,
         "composition": "Cotton 41%, Polyester 33%, Modal 26%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "19",
@@ -453,9 +539,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.5
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08eb"
+        },
         "type": "Trousers",
         "name": "Cable-knit wool-blend joggers",
         "description": "Joggers in a soft, cable-knit wool blend. High waist with covered elastication and a drawstring, and ribbed hems.",
@@ -466,7 +556,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692599/Products/Images/20/model02_u36wvb.jpg",
         "price": 2699,
         "composition": "Polyester 73%, Wool 25%, Elastane 2%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "20",
@@ -477,9 +566,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.8
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08ec"
+        },
         "type": "Trousers",
         "name": "Crease-leg straight satin trousers",
         "description": "Satin trousers with a high waist, zip fly and hook-and-eye fastening. Diagonal side pockets, fake back pockets and straight legs with creases.",
@@ -490,7 +583,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692605/Products/Images/21/model02_iwgtyd.jpg",
         "price": 2299,
         "composition": "Shell: Polyester 86%, Viscose 14%Pocket lining: Polyester 100%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "21",
@@ -501,9 +593,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.5
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08ed"
+        },
         "type": "Trousers",
         "name": "Cotton chinos Regular Fit",
         "description": "Chinos in stretch cotton twill with a zip fly and button, diagonal side pockets, a coin pocket and welt back pockets with a button. Regular Fit \u2013 a classic fit with good room for movement over the thighs and knees to create a comfortable, straight silhouette.",
@@ -514,7 +610,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692612/Products/Images/22/model02_jopu7k.jpg",
         "price": 1999,
         "composition": "Cotton 98%, Elastane 2%Pocket lining: Cotton 100%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "22",
@@ -525,9 +620,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.4
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08ee"
+        },
         "type": "Trousers",
         "name": "Twill trousers Slim Fit",
         "description": "5-pocket trousers in washed stretch twill with a regular waist and zip fly. Slim fit which is relaxed over the thighs and tapers from the knees down for a relaxed, well-tailored look.",
@@ -538,7 +637,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692609/Products/Images/23/model02_oghucb.jpg",
         "price": 1499,
         "composition": "Pocket: Cotton 100%Cotton 98%, Elastane 2%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "23",
@@ -549,9 +647,13 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.3
     },
     {
+        "_id": {
+            "$oid": "61b4739d44fc94bba7db08ef"
+        },
         "type": "Trousers",
         "name": "Regular Fit Joggers",
         "description": "Joggers in sweatshirt fabric made from a cotton blend. Covered elastication and a drawstring at the waist, pockets in the side seams and ribbed hems. Soft brushed inside.",
@@ -562,7 +664,6 @@
         "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692608/Products/Images/24/model02_wd0mhx.jpg",
         "price": 1299,
         "composition": "Cotton 70%, Polyester 25%, Viscose 5%",
-        "rating": "",
         "buyers": "",
         "__v": "",
         "id": "24",
@@ -573,6 +674,7 @@
             "L",
             "XL"
         ],
-        "reviews": []
+        "reviews": [],
+        "rating": 4.7
     }
 ]
