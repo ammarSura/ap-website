@@ -9,11 +9,12 @@ const ProductSchema = new mongoose.Schema({
 	category: [{ type: String }],
 	image: { type: String },
 	price: { type: Number },
-	rating: { type: Number },
+	rating: { type: Number},
 	reviews: [
 		{ 
 			name: { type: String },
-			reviewString: {type: String}
+			reviewString: {type: String},
+			rating: {type: Number},
 	 	}
 	],
 	buyers: [{ type: String }],

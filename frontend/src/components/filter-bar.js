@@ -59,7 +59,7 @@ export default function FilterBar() {
     }
 
     return (
-        // <div style={{display: "flex", flexDirection: "column"}}>
+        <div >
         <Container fluid="true" >
  
         
@@ -147,12 +147,13 @@ export default function FilterBar() {
                 </select>
             </Row>
             
-            <Row style={{marginTop:"20%"}}>
+            <Row style={{marginTop:"10%"}}>
                 <button onClick={() => Butter()}>Filter</button>
             </Row>
             
             
         </Container>
+        </div>
         
     );
 }

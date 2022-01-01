@@ -5,6 +5,7 @@ import {Container, Row, Col, Image, Button, DropdownButton, Dropdown, List, List
 import Reviews from "../components/reviews";
 import ProductCardCounterComp from "../components/product-card-counter";
 import ProductCardWishlistComp from "../components/product-card-wishlist";
+import RatingInputComp from "../components/rating-input";
 import { CartContext } from "../contexts/cart-context";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -33,6 +34,7 @@ export default function Product() {
     const [ wishlist, setWishlist ] = useState([]);
     const [ wishlistIsLoaded, setWishlistLoading ] = useState(false);
     const [ isLoaded, setLoading ] = useState(false);
+    const [ maxStar, setMaxStar ] = useState(0);
 
     const { user, isAuthenticated } = useAuth0();
     console.log('u', user);
@@ -112,7 +114,8 @@ export default function Product() {
             { 
               id: prod_id,
               name: 'ammar' ,
-              reviewString: review
+              reviewString: review,
+              rating: maxStar,
 
             }),
         headers: {
@@ -120,7 +123,24 @@ export default function Product() {
         }
     })
 
+  //   await fetch('/addRating', {
+        
+  //     method: 'POST',
+  //     body: JSON.stringify(
+  //         { 
+  //           product_id: prod_id,
+  //           rating: maxStar ,
+            
+
+  //         }),
+  //     headers: {
+  //         'Content-Type': 'application/json'
+  //     }
+  // })
+
+
     // carter.setCartLoading(false);
+    setMaxStar(0)
     document.getElementById('addReview').value = '';
     window.location.reload()
 
@@ -138,6 +158,35 @@ export default function Product() {
 
       return comps;
     };
+
+    function starSetter(x) {
+      setMaxStar(x);
+  }
+  
+  function starLooper() {
+      var lst = [];
+      for (let i = 1; i < 6; i++) {
+          lst.push(i)
+      }
+
+      
+      const stars = lst.map(star => {
+          if ( star <= maxStar) {
+              return (<i key={star}class="fas fa-star"style={{color: "#fcba03"}} onClick={()=> starSetter(star)}></i>)
+          } else {
+              return (<i key={star}class="far fa-star"style={{color: "#fcba03"}} onClick={()=> starSetter(star)}></i>)
+          }
+          
+          
+        });
+          
+      
+
+      
+
+        return stars;
+  }
+  
 
     
 
@@ -202,122 +251,119 @@ export default function Product() {
     if ( !isLoaded ) {
         return <div>Loading ... </div>;
       } else {
-        console.log('w', wishlist)
         return (
             // <h1 style={{marginTop:"200px"}}>{this.state.product.reviews[0].name}</h1>
-            <div> 
+          <div style={{paddingLeft: "5%", marginTop: "15%"}}> 
+            <Container fluid >
       
-            <Container fluid style={{
-              marginTop: "14%", 
-              marginLeft: "3%" 
-            }}> 
-      
-            <Row>
-      
-                <Col sm={4}>
-                  <Image src={product.image01} height="700px"/>
-                  <div>
-                      <h3 style={{
-                        marginTop:"12%"
-                      }}> Reviews </h3>
-      
-                      <div>
-                        <Reviews reviews={product.reviews}/>
-                        
-                      </div>
-      
-      
-                      
-                      <label>Review this product:</label>
-                      <textarea className="form-control" id="addReview" rows="3">
-
-                      </textarea>
-                      <button onClick={ () => addReview() }>Submit</button>
-                     
-      
-                    </div>
-                </Col>
-                <Col sm={4}>
-                  <Image src={product.image02} height="700px"/>
-                </Col>
-      
-                <Col sm={3}>
-      
-      
-                  <div style={{
-                    marginLeft: "7%", 
-                  }}>
+            <Row lg="12">
+                <Col lg="7">
+                  <Row lg="6">
                   
-                  <h1>{product.name}</h1>
+                    <Col lg="6" sm="6">
+                      <Image src={product.image01} width="100%"/>
+
+                  
+                    </Col>
+                
+                    <Col lg="6"sm="6">
+                      <Image src={product.image02} width="100%"/>
+                    </Col>
+                  </Row>
+
+                  <Row lg="6" style={{marginTop: "2.5%"}}>
+                    <Col lg="12">
+                    <Row lg="1" style={{marginBottom: "1em"}}>
+                      <h3 style={{}}> 
+                        Reviews 
+                      </h3>
+                    </Row>
+            
+                    <Row lg="1" style={{paddingLeft: "2.5%", paddingRight: "2.5%"}}>
+                      <Reviews reviews={product.reviews}/>
+                    </Row>
+              
+                    <Row lg="3" style={{marginTop: "5%"}}>
+                      <label>Review this product:</label>
+                    </Row>
+              
+                    <Row lg="4"style={{marginBottom: "2.5%"}}>
+                      <div style={{}}>
+                        {starLooper()}
+                      </div>
+                    </Row>
+
+                    <Row lg="1" style={{paddingLeft: "2.5%", paddingRight: "2.5%"}}>
+                      <textarea id="addReview" placeholder="Leave your review."></textarea>
+                    </Row>       
+              
+                    <Row lg="4" style={{paddingLeft: "2.5%", paddingRight: "2.5%", marginTop: "2.5%"}}>
+                      <button onClick={ () => addReview() }>Submit</button>
+                    </Row>
+                    </Col>
+              
+              </Row>
+
+                </Col>
+
+                
       
-                  <h3> {product.price} </h3>
+                <Col lg="5" style={{paddingRight:"5%"}}>
       
-                <p>{product.description}</p>
+                  <div >
+                  
+                    <h2>{product.name}</h2>
+      
+                    <h3> {product.price} </h3>
+      
+                    <p>{product.description}</p>
                 
                     <div> 
       
-                    <div> 
+                      <div> 
 
-                      <Dropdown style={{
-                      marginTop: "5%", 
-                      marginBottom: "5%"
-                      }}>
-                      <Dropdown.Toggle id="dropdown-button-dark-example1" variant="light">
-                          {/* Select Size */}
+                        <Dropdown style={{
+                          marginBottom: "5%", marginTop: "2.5%"
+                        }}>
+                        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="light">
+                          
                           {size}
-                      </Dropdown.Toggle>
+                        </Dropdown.Toggle>
 
-                      <Dropdown.Menu variant="light">
+                        <Dropdown.Menu variant="light">
                           
                           {looper()}
-                      </Dropdown.Menu>
-                      </Dropdown>
+                        </Dropdown.Menu>
+                        </Dropdown>
 
                       </div>
-      
-                      <div className="d-grid gap-2">
-                      <Button onClick={() => addToCart() } variant="secondary" size="lg" style={{width:"80%"}} >
-                      Add to Cart
-                      </Button>
-                      
-                      {/* <Button variant="secondary" size="lg" onClick={() => wisher()}> */}
-                      {/* {wishString} */}
-                      {/* Add to Wishlist */}
-                      {/* </Button> */}
-                      <ProductCardWishlistComp style={{marginBottom: "100px"}}id={prod_id} wishlist={addedToWishlist}size={size}/>
-                      {/* <ProductCardCounterComp id={prod_id} quantity={quantity} size={size} sizes={sizes}/> */}
-                      </div>
-                      {/* <div>
-                      <h3 style={{
-                        marginTop:"12%"
-                      }}> Reviews </h3>
       
                       <div>
-                        <Reviews reviews={product.reviews}/>
-                        
-                      </div>
-      
-      
+                        <Button onClick={() => addToCart() } variant="secondary" style={{width:"80%", marginBottom: "5%"}} >
+                          Add to Cart
+                        </Button>
                       
-                      <label>Review this product:</label>
-                      <textarea className="form-control" id="addReview" rows="3">
+                      
+                        <ProductCardWishlistComp style={{}}id={prod_id} wishlist={addedToWishlist}size={size}/>
+                      
+                      </div>
 
-                      </textarea>
-                      <button onClick={ () => addReview() }>Submit</button>
-                     
-      
-                    </div> */}
                     </div>
       
                   </div>
       
                 </Col>
+
+                
       
             </Row>
+
+            
+            
       
             </Container>
+            </div>
       
-            </div> 
           );
       }
     

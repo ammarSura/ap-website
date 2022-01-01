@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-import {Button} from "react-bootstrap";
+import {Button, Container, Row, Col} from "react-bootstrap";
 import "../App.css";
 import CarouselComp from "../components/carousel";
 import CardComp from "../components/cards";
@@ -39,23 +39,28 @@ export default function Profile() {
     if (isLoaded===false) {
         return <div>Loading ... </div>;
       } else {
-
+        console.log(user_state)
         return (
             // <div style={{marginBottom: "5%", marginTop: "10%", marginLeft: "20%", marginRight: "20%"}}>
-                <div style={{display: "grid", gridTemplateColumns: "50% 50%", marginBottom: "5%", marginTop: "15%", marginLeft: "20%"}}>
+                // <div style={{display: "grid", gridTemplateColumns: "50% 50%", marginBottom: "5%", marginTop: "15%", marginLeft: "20%"}}>
+                <Container style={{marginBottom: "5%", marginTop: "15%", marginLeft: "20%"}}>
                 
-                <div>
+                <Row>
+                  <Col>
                   <Orders orders={user_state.orders}/>
-                  <Addresses addresses={user_state.addresses}/> 
+                  <Addresses addresses={user_state.addresses}/>
+                  </Col>
                   
-                </div>
-                <div>
+                  <Col>
                   <Greeter user_db={user_state}/>
                   <AddressInput/>
-                </div>
+                </Col> 
+                  
+                </Row>
                 
                 
-                </div>
+                
+                </Container>
                 
 
             // </div>

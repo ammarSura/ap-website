@@ -2,20 +2,20 @@ import React, { Component } from "react";
 import "../App.css"
 
 
-export default class Review extends Component{
+export default function Review(props){
    
-   
-    render(){
-        return(
-            <div>
+   console.log(props.name)
+    
+    return(
+        <div>
+            
+            {/* <ul style={{listStyleType:"none"}}> */}
                 
-                {/* <ul style={{listStyleType:"none"}}> */}
-                    
-                    <p>"{this.props.review}"</p>
-                    <p>- {this.props.name}</p>
-                    
+                <p>"{props.review}"</p>
+                <p>- {props.name}</p>
                 
-            </div>
-        );  
-    }
+            
+        </div>
+    );  
+    
 }

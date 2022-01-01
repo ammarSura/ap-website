@@ -105,7 +105,7 @@ export default function ProductCardWishlistComp (props) {
         console.log(wishStatus)
         return (
             <div>
-                <Button variant="secondary" size="lg" style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(true) }>Add to Wishlist
+                <Button variant="secondary" style={{display:"block", width: "80%"}} onClick={() => setWishStatus(true) }>Add to Wishlist
                 </Button>
                 
             </div>

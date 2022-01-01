@@ -95,7 +95,7 @@ export default function Cart() {
     if (cart1IsLoaded) {
         return (
             <div style={{display: "grid", gridTemplateColumns: "50% 50%", marginTop: "15%", marginLeft: "20%", marginRight:"20%", overflow:"hidden"}}>
-                <div style={{height: "50%", overflow: "auto"}}>
+                <div style={{height: "35em", overflow: "auto"}}>
                 {looper()}
                 </div>
                 <div style={{marginLeft: "40%"}}>

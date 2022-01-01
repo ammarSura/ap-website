@@ -114,30 +114,48 @@ export default function NavbarComp() {
           </Nav>
           <Nav style = {{ paddingTop: "17px", marginRight: "5%" }}>
           
-          <SearchBar placeholder="Search"/>
+          <SearchBar placeholder="Search" />
             
           </Nav>
           <Nav style={{marginRight:"5%"}}>
             <Nav.Item style={{marginRight:"10%"}}> 
               <Link to="/profile">
-                <img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636476214/user_pjvppm.png" style={{
+                {/* <img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636476214/user_pjvppm.png" style={{
               height: "30px"}}>
-                </img></Link>
+                </img> */}
+                <i class="far fa-user-circle" style={{fontSize: "2.5em", color: "#373738"}}></i>
+              </Link>
             </Nav.Item>
-            <Nav.Item style={{marginRight:"8%"}}><Link to="/wishlist"><img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636477321/love_sdy3fm.png" style={{
+            <Nav.Item style={{marginRight:"8%"}}>
+              <Link to="/wishlist">
+                {/* <img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636477321/love_sdy3fm.png" style={{
               height: "30px"
-            }}/></Link></Nav.Item>
+            }}/> */}
+              <i class="far fa-heart" style={{fontSize: "2.5em", color: "#373738"}}></i>
+            </Link>
+            </Nav.Item>
             <Nav.Item style={{ marginRight:"10%"}}>
               <Link to="/cart">
-              <img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636475050/shopping-bag_rtxh3c.png" style={{
+              {/* <img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636475050/shopping-bag_rtxh3c.png" style={{
               height: "30px"
-            }}/>
+            }}/> */}
+            {/* <i class="fas fa-shopping-cart"style={{fontSize: "2em", color: "#000"}}></i>
+            <label style={{color: "#fff", fontSize: "2em", verticalAlign: "top"}}>
+            <CartCounter cart={carter.cart.cart}/>
+            </label> */}
+            
+            <span class="fa-layers-top-left" >
+              <i class="fas fa-shopping-cart" style={{fontSize: "2.5em", color: "#373738"}}></i>
+              <span class="fa-layers-counter" ><CartCounter cart={carter.cart.cart}/></span>
+           </span>
+            
             </Link>
             
             </Nav.Item>
-            <Nav.Item>
-              <CartCounter cart={carter.cart.cart}/>
-            </Nav.Item>
+            {/* <Nav.Item>
+              {/* <CartCounter cart={carter.cart.cart}/> */}
+              
+            {/* </Nav.Item> */}
             <LogoutButton/>
           </Nav>
         </Navbar.Collapse>

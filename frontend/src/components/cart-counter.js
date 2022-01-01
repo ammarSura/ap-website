@@ -47,11 +47,22 @@ export default function CartCounter(props) {
         }
     });
     if ( cartIsLoaded && cartQuantityIsLoaded ) {
-        return (
-            <div className="circle"> 
-                {cartQuantity}
-            </div>
-        );
+        if (cartQuantity <= 9) {
+            return (
+                <div style={{marginTop: "-2em", marginLeft: "1em", color:"#fff", fontSize: "1.3em"}}> 
+                    
+                    {cartQuantity}  
+                </div>
+            );
+        } else {
+            return (
+                <div style={{marginTop: "-2em", marginLeft: "0.8em", color:"#fff", fontSize: "1.3em"}}> 
+                    
+                    {cartQuantity}  
+                </div>
+            ); 
+        }
+        
     } else {
         return (
         <div>

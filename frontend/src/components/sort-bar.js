@@ -41,7 +41,7 @@ export default function SortBar() {
             {/* <button onClick={() => Butter()}>Filter</button> */}
            
             
-            <Row style={{marginTop:"20%", marginBottom: "20%"}}>
+            <Row style={{marginTop:"10%", marginBottom: "20%"}}>
                 <button onClick={() => Butter()}>Sort</button>
             </Row>
             

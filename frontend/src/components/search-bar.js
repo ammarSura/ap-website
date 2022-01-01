@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import Fuse from 'fuse.js'
 
 
 export default function SearchBar(props) {
@@ -23,9 +24,19 @@ export default function SearchBar(props) {
         const searchWord = event.target.value;
         console.log(searchWord)
         setWordEntered(searchWord);
-        const newFilter = data.filter( value => 
-            value.includes(searchWord.toLowerCase())
-        );
+        // const newFilter = data.filter( value => 
+        //     value.includes(searchWord.toLowerCase())
+        // );
+        const options = {
+            includeScore: false,
+            shouldSort: true
+          }
+          
+        const fuse = new Fuse(data, options);
+        const result = fuse.search(searchWord)
+        console.log('fuse', result)
+        const newFilter = result;
+
 
         if (searchWord === "") {
         setFilteredData([]);
@@ -53,8 +64,10 @@ export default function SearchBar(props) {
   
 
     return (
-        <div className="search">
-            <div className="searchInputs">
+
+        <div className="search" style={{marginRight: "10%", display: "flex",
+        flexDirection: "row"}}>
+            <div className="searchInputs" >
             <input
                 type="text"
                 className="search-input"
@@ -64,15 +77,16 @@ export default function SearchBar(props) {
                 onKeyDown={onKeyDown}/>
             </div>
         <div>
-            <button onClick = {submitQuery}>Search</button>
+            <button style={{fontSize: "20px", paddingRight:"5px", paddingLeft: "5px"}}><i onClick = {submitQuery} class="fas fa-search" style={{fontSize: "18px"}}></i></button>
+            
         </div>
 
         {filteredData.length != 0 && (
-        <div className="dataResult">
+        <div className="dataResult" style={{position: "absolute", marginTop: "2.4%"}}>
             {filteredData.slice(0, 15).map((value, key) => {
                 return (
-                    <a key={key} className="dataItem" href={'results/'+ value} >
-                    <p>{value} </p>
+                    <a key={key} className="dataItem" href={'//localhost:3000/results/'+ value.item} >
+                    <p>{value.item} </p>
                     </a>
                 );
         })}

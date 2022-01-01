@@ -86,7 +86,7 @@ a:link {
 }
 
 .searchInputs {
-  margin-top: 105px;
+  /* margin-top: 105px; */
   display: flex;
 }
 
@@ -146,9 +146,9 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
   background-color: lightgrey;
-}
+} */
 
 #clearBtn {
   cursor: pointer;
@@ -268,4 +268,8 @@ a:hover {
   text-align: center;
   font-size: 2em;
   border: 3px solid #000;
+}
+
+.logout:hover {
+  cursor: pointer;
 }

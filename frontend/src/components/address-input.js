@@ -67,8 +67,8 @@ export default function AddressInput() {
     
     return(
         <div >
-        <h2>Add Address</h2>
-        <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
+        <h3>Add Address</h3>
+        {/* <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
             <li><input type="text" placeholder="Add address name" id="name"/></li>
             <li><input type="text" placeholder="Line 1" id="line1"/></li>
             <li><input type="text" placeholder="Line 2" id="line2"/></li>
@@ -77,7 +77,32 @@ export default function AddressInput() {
             <li><input type="text" placeholder="City" id="city"/></li>
             <li><input type="text" placeholder="Pincode" id="pincode"/></li>
             
-        </ul>
+        </ul> */}
+
+        <div style={{display: "flex", flexDirection: "column"}}>
+                    <div>
+                        <input type="text" placeholder="Add address name" id="name"/>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Line 1" id="line1"/>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Line 2" id="line2"/>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Country" id="country"/>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="State" id="state"/>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="City" id="city"/>   
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Pincode" id="pincode"/>
+                    </div>
+                </div>
+                
         
 
         <button onClick={() => Butter()}>Add Address</button>

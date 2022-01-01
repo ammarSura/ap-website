@@ -191,6 +191,20 @@ app.post('/emptyCart', async (req, res) => {
   res.json({ status: 'ok' });
 });
 
+app.post('/addRating', async (req, res) => {
+  const record = req.body;
+  console.log('record: ', record)
+
+  const response1 = await Product.findOneAndUpdate(
+    {product_id: record.product_id}, 
+    {rating: record.rating  })
+
+    console.log('/addRating', response1);
+
+  
+  res.json({ status: 'ok' });
+});
+
 // app.post('/updateCart', async (req, res) => {
 //   const record = req.body;
 //   console.log('record: ', record)
@@ -255,10 +269,24 @@ app.post('/addReview', async (req, res) => {
 
   
 
-  const response2 = await Product.findOneAndUpdate( {id: record.id}, 
-  {$push: { reviews: { name: record.name, reviewString: record.reviewString } } });
+  const response1 = await Product.findOneAndUpdate( { id: record.id }, 
+  {$push: { reviews: { name: record.name, reviewString: record.reviewString, rating: record.rating } } });
   
-  console.log('/addReview', response2);
+  console.log('/addReview', response1);
+
+  const response2 = await Product.find({ id: record.id}, 'reviews');
+  let avg = 0
+  for (let i = 0; i < response2[0].reviews.length; i++) {
+    avg = response2[0].reviews[i].rating + avg;
+    
+  }
+
+  const response3 = await Product.findOneAndUpdate(
+    {id: record.id}, 
+    {rating: (Math.round( (avg/response2[0].reviews.length) + "e+2")  + "e-2") })
+
+    console.log('/addRating', response3);
+  console.log('rez', response2, avg);
   res.json({ status: 'ok' });
 
  
