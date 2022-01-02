@@ -19,8 +19,8 @@ export default function Cart() {
     const [ cart1IsLoaded, setCart1Loading ] = useState(false);
 
     function looper() {
-        console.log('cart1', cart1)
-        const items = cart1.map( (item) => 
+        // console.log('cart1', cart1)
+        const items = cart.map( (item) => 
         <CartCardComp key = {item.key} product_id={item.product_id} size={item.size} quantity={item.quantity } price = {item.price} />
         // <h1 key = {item.key}>{item.product_id}, {item.size}, {item.quantity}</h1>
         
@@ -77,10 +77,10 @@ export default function Cart() {
     useEffect( () => {
         if ( carter.cartIsLoaded ) {
             console.log(cart);
-            if ( !cart1IsLoaded) {
+            if ( !cartIsLoaded) {
                 setCart(carter.cart.cart);
                 setCartLoading(true);
-                counter();
+                // counter();
             }    
         // } else {
             
@@ -92,7 +92,7 @@ export default function Cart() {
     }
     );
 
-    if (cart1IsLoaded) {
+    if (cartIsLoaded) {
         return (
             <div>
                 { (carter.cart.cart.length > 0 )?

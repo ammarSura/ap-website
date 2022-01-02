@@ -34,6 +34,7 @@ export default function ProductCardComp (props) {
             <Card.Img variant="top" src={props.image01} style = {{width:"15em", marginLeft: "auto", marginRight: "auto" ,marginTop:"10%"}}/>
 
             <Card.Body style={{height:"80px", marginLeft:"15%"}}>
+            <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/>
               {props.name.length < 25 ?
               <Card.Title onClick={() => Butter()} className="product-card-title" style={{cursor: "pointer"}}>{props.name}
               </Card.Title>
@@ -52,7 +53,7 @@ export default function ProductCardComp (props) {
                   <RatingComp rating={props.rating}/>
               </Card.Text>
               <div style={{display: "grid"}}>
-              <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/>
+              
 
               {/* <ProductCardCounterComp id={props.id} quantity={props.quantity}/> */}
               </div>

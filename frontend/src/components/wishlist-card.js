@@ -10,6 +10,8 @@ import "../App.css";
 import ProductCardCounterComp from './product-card-counter';
 import WishlistRemove from './wishlist-remove';
 import { useAuth0 } from "@auth0/auth0-react";
+import ProductCardWishlistComp from "./product-card-wishlist";
+import RatingComp from "./rating";
 
 
 
@@ -70,6 +72,7 @@ export default function WishlistCardComp (props) {
             <Card.Img variant="top" src={product.image01} style = {{width:"15em", marginLeft: "auto", marginRight: "auto" ,marginTop:"10%"}}/>
 
             <Card.Body style={{height:"80px", marginLeft:"15%"}}>
+            <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/>
               {product.name.length < 25 ?
               <Card.Title onClick={() => Butter()} className="product-card-title" style={{cursor: "pointer"}}>{product.name}
               </Card.Title>
@@ -81,10 +84,16 @@ export default function WishlistCardComp (props) {
                   {product.price}  
               </Card.Text>
               <div style={{display: "grid"}}>
-              {/* <ProductCardWishlistComp style={{marginBottom: "100px"}}id={props.id} wishlist={props.wishlist}/> */}
-              <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={ () => removeFromWishlist(product._id)}>
+              <Card.Text className="product-card-text">
+                  {product.gender}
+              </Card.Text>
+              <Card.Text className="product-card-text">
+                  {product.rating}
+                  <RatingComp rating={product.rating}/>
+              </Card.Text>
+              {/* <Button style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={ () => removeFromWishlist(product._id)}>
                 Remove from Wishlist
-              </Button>
+              </Button> */}
 
 
 
@@ -96,7 +105,7 @@ export default function WishlistCardComp (props) {
       );
     } else {
       return (
-        <div styl={{marginTop: "20%"}}>
+        <div style={{marginTop: "20%"}}>
           <p>Loading...</p>
         </div>
       );

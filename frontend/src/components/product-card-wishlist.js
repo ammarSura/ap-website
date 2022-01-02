@@ -14,23 +14,19 @@ import "../App.css";
 
 export default function ProductCardWishlistComp (props) {
     
-    // const carter = useContext( CartContext );
-
-    const [ wishlist, setWishlist ] = useState([]);
+    const carter = useContext( CartContext );
+    const [ wishlist, setWishlist ] = useState(null);
     const [ wishlistIsLoaded, setWishlistLoading ] = useState(false);
-
-    const [ prevWishStatus, setPrevWishStatus ] = useState(false);
-    const [ wishStatus, setWishStatus ] = useState(false);
+    const { user, isAuthenticated, isLoading } = useAuth0();  // console.log('wish', user)
+    const [ wishStatus, setWishStatus ] = useState(null);
+    const [ prevWishStatus, setPrevWishStatus ] = useState(null);
     const [ statusIsLoaded, setStatusLoading ] = useState(false);
-    const [ id1, setId ] = useState(props.id);
-    const { user, isAuthenticated } = useAuth0();
-    
-    const [ isLoaded, setLoading ] = useState(false);
 
     
 
-    async function removeFromWishlist(product_id) {
-   
+    
+
+    async function removeFromWishlist() {
         
         await fetch('/removeFromWishlist', {
             
@@ -38,90 +34,105 @@ export default function ProductCardWishlistComp (props) {
             body: JSON.stringify(
                 { 
                     email: user.email ,
-                    product_id: product_id,
+                    product_id: props.id,
                     
                 }),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
+
         setPrevWishStatus(false);
         window.location.reload()
     }
 
-    async function addToWishlist(product_id) {
+    async function addToWishlist() {
    
-        console.log('asda', product_id);
+        
         await fetch('/addToWishlist', {
             
             method: 'POST',
             body: JSON.stringify(
                 { 
                     email: user.email ,
-                    product_id: product_id,
+                    product_id: props.id,
     
                 }),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-    
+
         setPrevWishStatus(true);
         window.location.reload()
     
+    
+    }
+
+    function changer() {
+
     }
     
 
     
 
     useEffect(() => {
+        if ( carter.wishlistIsLoaded && !wishlistIsLoaded ) {
+            console.log(carter)
+            setWishlist(carter.wishlist.wishlist);
+            setWishlistLoading(true);
 
-        if ( !statusIsLoaded ) {
-            setWishStatus(props.wishlist);
-            console.log(props.wishlist)
-            setPrevWishStatus(props.wishlist);
-            setStatusLoading(true);
-            
-        } else {
-            console.log(wishStatus, props.wishlist);
-            if (prevWishStatus != wishStatus) {
-                console.log('chaneged')
-                if (wishStatus) {
-                    console.log('as')
-                    addToWishlist( props.id);
-                } else {
-                    console.log('remov')
-                    removeFromWishlist( props.id);
-                }
+            console.log('yeller', carter.wishlist.wishlist);
+        }
+
+        if ( wishlistIsLoaded && !statusIsLoaded) {
+            console.log('heres', wishlist)
+            setWishStatus(false);
+            setPrevWishStatus(false);
+            for (let i = 0; i < wishlist.length; i++) {
+                if (wishlist[i].product_id === props.id ) {
+                    setWishStatus(true);
+                    setPrevWishStatus(true)
+                }   
+            }
+
+            setStatusLoading(true)
+        }
+
+        if ( prevWishStatus !== wishStatus ) {
+            if ( wishStatus ) {
+                addToWishlist();
+                
+            } else {
+                removeFromWishlist();
+                
             }
         }
+
+       
       
         
        
     });
 
-    
-    if (!wishStatus) {
-        console.log(wishStatus)
-        return (
-            <div>
-                <Button variant="secondary" style={{display:"block", width: "80%"}} onClick={() => setWishStatus(true) }>Add to Wishlist
-                </Button>
-                
-            </div>
-            
-        );
+    if ( statusIsLoaded ) {
+        if ( wishStatus ) {
+            return (
+                <i class="fas fa-heart" style={{color: "#eb3455", fontSize: "1.2em"}} onClick={() => setWishStatus(false) }></i>
+            );
+        } else {
+            return (
+                <i class="far fa-heart"style={{color: "#eb3455", fontSize: "1.2em"}} onClick={() => setWishStatus(true) }></i>
+            );
+        }
     } else {
-        console.log(wishStatus)
         return (
             <div>
-                <Button variant="secondary" size="lg" style={{display:"block", width: "80%", marginBottom: "1em"}} onClick={() => setWishStatus(false) }>
-                    Remove from Wishlist
-                </Button>
+                loading...
             </div>
-            
-        );
+        )
     }
     
+                    
       
 } 
