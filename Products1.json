@@ -12,9 +12,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692608/Products/Images/01/model02_htb3c8.jpg",
   "price": 7999,
   "composition": "Shell: Cotton 70%, Polyamide 30%Padding: Down 80%, Feather 20%Lining: Polyester 100%",
-  "rating": {
-    "$numberDecimal": "3.5"
-  },
   "buyers": 0,
   "__v": "",
   "id": "1",
@@ -25,7 +22,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 5
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08d9"
@@ -40,7 +38,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692598/Products/Images/02/model02_bmidhp.jpg",
   "price": 3999,
   "composition": "Shell: Polyester 100%Padding: Polyester 100%Lining: Polyester 100%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "2",
@@ -51,7 +48,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.6
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08da"
@@ -66,7 +64,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692597/Products/Images/03/model02_wwmbqq.jpg",
   "price": 2999,
   "composition": "Shell: Polyester 100%Lining: Polyester 100%Padding: Polyester 100%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "3",
@@ -77,7 +74,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08db"
@@ -92,7 +90,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692597/Products/Images/04/model02_rc39wp.jpg",
   "price": 22999,
   "composition": "Coating: Polyurethane 100%Shell: Polyester 90%, Elastane 10%Lining: Polyester 100%Padding: Polyester 100%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "4",
@@ -106,12 +103,70 @@
   "reviews": [
     {
       "name": "ammar",
-      "reviewString": "Great Product!",
+      "reviewString": "ad",
+      "rating": 4,
       "_id": {
-        "$oid": "61b47abaa66c7ec7d5b127ce"
+        "$oid": "61d00060eb01326b17d733e0"
+      }
+    },
+    {
+      "name": "ammar",
+      "reviewString": "asd",
+      "rating": 3,
+      "_id": {
+        "$oid": "61d001f357ec254eebddff0f"
+      }
+    },
+    {
+      "name": "ammar",
+      "reviewString": "asdf",
+      "rating": 4,
+      "_id": {
+        "$oid": "61d0036b378e3a1c87a3ec47"
+      }
+    },
+    {
+      "name": "ammar",
+      "reviewString": "asdf",
+      "rating": 4,
+      "_id": {
+        "$oid": "61d0036f378e3a1c87a3ec50"
+      }
+    },
+    {
+      "name": "ammar",
+      "reviewString": "as",
+      "rating": 4,
+      "_id": {
+        "$oid": "61d003cb0ef682969ce37967"
+      }
+    },
+    {
+      "name": "ammar",
+      "reviewString": "asdd",
+      "rating": 3,
+      "_id": {
+        "$oid": "61d0042015f3851f8540289e"
+      }
+    },
+    {
+      "name": "ammar",
+      "reviewString": "ds",
+      "rating": 2,
+      "_id": {
+        "$oid": "61d0046a6f9c3b57e31025ab"
+      }
+    },
+    {
+      "name": "ammar",
+      "reviewString": "",
+      "rating": 0,
+      "_id": {
+        "$oid": "61d01c566f9c3b57e3102984"
       }
     }
-  ]
+  ],
+  "rating": 3
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08dc"
@@ -126,7 +181,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692598/Products/Images/05/model02_klaivb.jpg",
   "price": 5499,
   "composition": "Shell: Polyester 90%, Elastane 10%Lining: Polyester 100%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "5",
@@ -137,7 +191,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 2.4
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08dd"
@@ -152,7 +207,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692607/Products/Images/06/model02_fqlt1a.jpg",
   "price": 3999,
   "composition": "Padding: Polyester 100%Lining: Polyester 100%Shell: Cotton 100%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "6",
@@ -163,7 +217,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 2
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08de"
@@ -178,7 +233,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692605/Products/Images/07/model02_oxdle4.jpg",
   "price": 1499,
   "composition": "Cotton 85%, Polyester 15%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "7",
@@ -189,7 +243,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.7
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08df"
@@ -204,7 +259,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692607/Products/Images/08/model02_wcr2x9.jpg",
   "price": 799,
   "composition": "Cotton 62%, Polyester 38%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "8",
@@ -215,7 +269,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 2.1
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e0"
@@ -230,7 +285,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692606/Products/Images/09/model02_rts5va.jpg",
   "price": 1999,
   "composition": "Shell: Cotton 60%, Polyester 40%Neck lining: Cotton 100%Neck lining: Cotton 57%, Polyester 38%, Elastane 5%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "9",
@@ -241,7 +295,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.9
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e1"
@@ -256,7 +311,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692602/Products/Images/10/model02_fr6zgo.jpg",
   "price": 799,
   "composition": "Cotton 75%, Polyester 22%, Viscose 3%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "10",
@@ -267,7 +321,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.2
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e2"
@@ -282,7 +337,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692600/Products/Images/11/model02_uzzznq.jpg",
   "price": 2299,
   "composition": "Cotton 60%, Polyester 40%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "11",
@@ -315,7 +369,8 @@
         "$oid": "61b474a2f2889138d4e3ff46"
       }
     }
-  ]
+  ],
+  "rating": 4.9
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e3"
@@ -330,7 +385,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692610/Products/Images/12/model02_qyzo5e.jpg",
   "price": 1999,
   "composition": "Cotton 59%, Polyester 41%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "12",
@@ -341,7 +395,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.6
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e4"
@@ -356,7 +411,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692610/Products/Images/13/model02_x3tafk.jpg",
   "price": 1499,
   "composition": "Hood lining: Cotton 60%, Polyester 40%Shell: Cotton 60%, Polyester 40%",
-  "rating": 0,
   "buyers": 0,
   "__v": "",
   "id": "13",
@@ -367,7 +421,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.2
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e5"
@@ -382,7 +437,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692611/Products/Images/14/model02_xz6nmr.jpg",
   "price": 1499,
   "composition": "Cotton 72%, Polyester 28%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "14",
@@ -393,7 +447,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e6"
@@ -408,7 +463,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692609/Products/Images/15/model02_grj6nt.jpg",
   "price": 1299,
   "composition": "Recycled polyester 38%Recycled cotton 34%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "15",
@@ -419,7 +473,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.4
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e7"
@@ -434,7 +489,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692601/Products/Images/16/model02_kkacv8.jpg",
   "price": 1499,
   "composition": "Shell: Cotton 60%, Polyester 40%Hood lining: Cotton 60%, Polyester 40%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "16",
@@ -445,7 +499,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.5
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e8"
@@ -460,7 +515,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692601/Products/Images/17/model02_sadfi8.jpg",
   "price": 1999,
   "composition": "Polyester 100%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "17",
@@ -471,7 +525,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.5
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08e9"
@@ -486,7 +541,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692599/Products/Images/18/model02_l1i9wj.jpg",
   "price": 2299,
   "composition": "Hood lining: Cotton 57%, Polyester 43%Shell: Cotton 57%, Polyester 43%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "18",
@@ -497,7 +551,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.4
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08ea"
@@ -512,7 +567,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692602/Products/Images/19/model02_pudyz2.jpg",
   "price": 2299,
   "composition": "Cotton 41%, Polyester 33%, Modal 26%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "19",
@@ -523,7 +577,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.5
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08eb"
@@ -538,7 +593,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692599/Products/Images/20/model02_u36wvb.jpg",
   "price": 2699,
   "composition": "Polyester 73%, Wool 25%, Elastane 2%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "20",
@@ -549,7 +603,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.8
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08ec"
@@ -564,7 +619,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692605/Products/Images/21/model02_iwgtyd.jpg",
   "price": 2299,
   "composition": "Shell: Polyester 86%, Viscose 14%Pocket lining: Polyester 100%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "21",
@@ -575,7 +629,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.5
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08ed"
@@ -590,7 +645,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692612/Products/Images/22/model02_jopu7k.jpg",
   "price": 1999,
   "composition": "Cotton 98%, Elastane 2%Pocket lining: Cotton 100%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "22",
@@ -601,7 +655,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.4
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08ee"
@@ -616,7 +671,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692609/Products/Images/23/model02_oghucb.jpg",
   "price": 1499,
   "composition": "Pocket: Cotton 100%Cotton 98%, Elastane 2%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "23",
@@ -627,7 +681,8 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.3
 },{
   "_id": {
     "$oid": "61b4739d44fc94bba7db08ef"
@@ -642,7 +697,6 @@
   "image03": "https://res.cloudinary.com/dejzdjexf/image/upload/v1636692608/Products/Images/24/model02_wd0mhx.jpg",
   "price": 1299,
   "composition": "Cotton 70%, Polyester 25%, Viscose 5%",
-  "rating": "",
   "buyers": "",
   "__v": "",
   "id": "24",
@@ -653,5 +707,6 @@
     "L",
     "XL"
   ],
-  "reviews": []
+  "reviews": [],
+  "rating": 4.7
 }]

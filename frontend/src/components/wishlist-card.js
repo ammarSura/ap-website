@@ -81,7 +81,7 @@ export default function WishlistCardComp (props) {
               </Card.Title>}
 
               <Card.Text className="product-card-text">
-                  {product.price}  
+                ₹ {product.price}  
               </Card.Text>
               <div style={{display: "grid"}}>
               <Card.Text className="product-card-text">

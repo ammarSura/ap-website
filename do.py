@@ -14,12 +14,15 @@ for i in data:
     # print(i["_id"])
     # i[ "id" ] = str(i["_id"])
     # i["sizes"] = ['XS', 'S', 'M', 'L', 'XL']
-    del i["rating"]
-    r = random.random() * 5 + 2
+    del i["_id"]
+    # r = random.random() * 5 + 2
 
-    if r > 5 :
-        r = 4 + random.random()
-    i["rating"] = round(r, 1)
+    # if r > 5 :
+    #     r = 4 + random.random()
+    # i["rating"] = round(r, 1)
+
+    i["quantity"] = 50
+    i["wishedQuantity"] = 0
     
  
 # Closing file

@@ -57,7 +57,7 @@ export default function CartCardComp(props) {
 
     
     if ( isLoaded && wishlistLoaded) {
-        console.log('price', props.product_id)
+        console.log('price', product)
         return (
          
         <Card style={{width : "20em", height : "43em"}} >
@@ -73,7 +73,10 @@ export default function CartCardComp(props) {
               </Card.Title>}
 
               <Card.Text className="product-card-text">
-                  {product.price}  
+                ₹ {product.price}  
+              </Card.Text>
+              <Card.Text className="product-card-text">
+                  {props.size}  
               </Card.Text>
               <Card.Text className="product-card-text">
                   {product.gender}

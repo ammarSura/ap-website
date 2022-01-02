@@ -49,8 +49,9 @@ export default function Home() {
     
     return (
       <div style={{marginBottom: "5%"}}>
-         <div style={{display: "flex", flexDirection: "column", marginLeft: "15%", marginRight: "15%", marginTop: "2.5%"}}>
-         <div style={{marginTop: "2.5%", marginBottom: "2.5%"}}>
+         <div style={{display: "flex", flexDirection: "column", marginLeft: "20%", marginRight: "20%", marginTop: "1%"}}>
+           <img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636476029/esa_logo_xtnzpj.png" style={{width:"15%"}}></img>
+         <div style={{marginTop: "1%", marginBottom: "2.5%"}}>
             <SignUpCarouselComp/>
           </div> 
           <div style={{marginTop: "1%", marginBottom: "1%"}}>

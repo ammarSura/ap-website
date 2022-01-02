@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
 import "../App.css";
 
-export default class CarouselComp extends Component {
-    render() {
+export default function CarouselComp() {
       return (
         
     
@@ -62,5 +61,5 @@ export default class CarouselComp extends Component {
         </Carousel>
             
       );
-    }
+  
   }

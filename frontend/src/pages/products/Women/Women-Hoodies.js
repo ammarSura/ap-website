@@ -8,13 +8,13 @@ import PageDisplay from "../../../components/page-display";
 
 
 
-export default function MenTshirts() {
-  
-    return (
-      <PageDisplay string='/search/men/tshirt'/>
-    );
 
+export default function WomenHoodies() {
   
+
+  return (
+    <PageDisplay string="/search/women/hoodie"/>
+  );
 }
 
  

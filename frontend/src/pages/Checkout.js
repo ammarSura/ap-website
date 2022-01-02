@@ -100,6 +100,7 @@ export default function Checkout() {
         
         if ( !cartIsLoaded && isAuthenticated ) {
             setCart(carter.cart.cart);
+            
             setCartLoading(true); 
         }
     });

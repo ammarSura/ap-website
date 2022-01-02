@@ -13,7 +13,7 @@ export default function MenTrousers() {
   
 
   return (
-    <PageDisplay string="/search/men/trousers"/>
+    <PageDisplay string="/search/men/Trousers"/>
   );
     
 }

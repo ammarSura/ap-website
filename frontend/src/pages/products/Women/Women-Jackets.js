@@ -9,10 +9,13 @@ import PageDisplay from "../../../components/page-display";
 
 
 
-export default function WomenJeans() {
+export default function WomenJackets() {
   
 
-  '/search/women/jeans'
+  
+  return (
+    <PageDisplay string='/search/women/jacket'/>
+  );
     
 }
 

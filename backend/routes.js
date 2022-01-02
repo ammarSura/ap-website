@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const Product = require('./models/Product');
 const PORT = 3080;
+const Fuse = require('fuse.js')
 
 
 // connect to server
@@ -48,10 +49,12 @@ app.post('/addUser', async (req, res) => {
     if (check.length==0) {
       const response = await User.create(record);
       console.log(response);
-      res.json({ status: 'ok' });
+      
     }
 
     console.log('/addUser', check);
+
+    res.json({ status: 'ok' });
     
 });
 
@@ -126,6 +129,10 @@ app.post('/submitOrder', async (req, res) => {
     {email: record.email},
     {$push: { orders: {product_id: record.product_id, quantity: record.quantity, size: record.size, address: record.address, price: record.price}}}
   );
+
+  const response1 = await Product.find({id: record.product_id})
+  console.log(response1[0].quantity);
+  const response2 = await Product.findOneAndUpdate({id: record.product_id}, {quantity: response1[0].quantity - record.quantity});
 
   console.log('/submitOrder', response);
 
@@ -337,6 +344,10 @@ app.post('/addToWishlist', async (req, res) => {
       {email: record.email}, 
       {$push: { wishlist: {product_id: record.product_id}}});
 
+  const response1 = await Product.find({id: record.product_id})
+
+  const response2 = await Product.findOneAndUpdate({id: record.product_id}, {wishedQuantity: response1[0].wishedQuantity + 1})
+
   console.log('/addToWishlist', response);
 
   res.json({ status: 'ok' });
@@ -350,6 +361,12 @@ app.post('/removeFromWishlist', async (req, res) => {
   const response = await User.findOneAndUpdate(
       {email: record.email}, 
       {$pull: { wishlist: { product_id: record.product_id }}});
+
+  const response1 = await Product.find({id: record.product_id})
+  if (response1[0].wishedQuantity > 0) {
+    const response2 = await Product.findOneAndUpdate({id: record.product_id}, {wishedQuantity: response1[0].wishedQuantity - 1})
+  }
+  
 
 console.log('/removeFromWishlist', response)
 
@@ -458,20 +475,39 @@ app.get('/search/byterm/:term', async (req, res) => {
   
   const term = req.params.term;
   
-  console.log(term);
-  ngram = splitter(term);
-  console.log('nram', ngram);
+  // console.log(term);
+  // ngram = splitter(term);
+  // console.log('nram', ngram);
 
-  var lst = [];
-  for await (const doc of Product.find().cursor()) {
-    for (let i = 0; i < ngram.length; i++ ) {
-      if (doc.name.includes(ngram[i])) {
-        lst.push(doc);
-        break;
-      }
-    }
+  // var lst = [];
+  // for await (const doc of Product.find().cursor()) {
+  //   for (let i = 0; i < ngram.length; i++ ) {
+  //     if (doc.name.includes(ngram[i])) {
+  //       lst.push(doc);
+  //       break;
+  //     }
+  //   }
+  // }
+
+  const response = await Product.find();
+  console.log(response)
+
+  const options = {
+    includeScore: true,
+    shouldSort: true,
+    // Search in `author` and in `tags` array
+    keys: ['name', 'type', 'description']
   }
-  console.log('/search/byterm/:term', lst);
+  
+  const fuse = new Fuse(response, options)
+  
+  const result = fuse.search(term)
+  let lst = [];
+  for (let i = 0; i < result.length; i++) {
+    lst.push(result[i]["item"])
+    
+  }
+  console.log('/search/byterm/:term', lst, term);
   res.json(lst);
 });
 
@@ -513,11 +549,16 @@ app.get('/search/gender/:term', async (req, res) => {
 
 app.get('/search/men/:category', async (req, res) => {
   // const gender = req.params.gender;
+  console.log('searcher', req.params.category);
   const category = req.params.category
 
-  const records = await Product.find({$and: [ {gender: {$regex: 'Men'}} , {$or: [{category : {$regex: category, $options: '<i>'} },{name: {$regex: category, $options: '<i>'} }] } ] });
+
+  const records = await Product.find({$and: [ {gender: {$regex: 'Men'} } , {type : {$regex: category, $options: '<i>'} }] });
   console.log('/search/men/:category', records);
-	res.json(records);
+
+  res.json(records);
+  
+  
 
 
 });
@@ -526,9 +567,10 @@ app.get('/search/women/:category', async (req, res) => {
   // const gender = req.params.gender;
   const category = req.params.category
 
-  const records = await Product.find({$and: [ {gender: {$regex: 'Women'}} , {$or: [{category : {$regex: category, $options: '<i>'} },{name: {$regex: category, $options: '<i>'} }] } ] });
-  console.log('/search/women/:category', records);
-	res.json(records);
+  const records = await Product.find({$and: [ {gender: {$regex: 'Women'} } , {type : {$regex: category, $options: '<i>'} }] });
+  console.log('/search/men/:category', records);
+
+  res.json(records);
 
 
 });

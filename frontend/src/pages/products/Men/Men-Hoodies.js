@@ -9,13 +9,13 @@ import PageDisplay from "../../../components/page-display";
 
 
 
-export default function MenJeans() {
-
-  return (
-    <PageDisplay string='/search/men/jeans'/>
-  );
+export default function MenHoodies() {
   
 
+  return (
+    <PageDisplay string="/search/men/hoodie"/>
+  );
+    
 }
 
  

@@ -1,8 +1,5 @@
 [
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08d8"
-        },
         "type": "Jacket",
         "name": "Down jacket",
         "description": "High-collared jacket in woven fabric with a filling of 80% down and 20% feathers. Zip and wind flap with concealed press-studs down the front, dropped shoulders and discreet pockets in the side seams. Concealed elastication at the cuffs and hem. Lined.",
@@ -24,12 +21,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.1
+        "rating": 5,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08d9"
-        },
         "type": "Jacket",
         "name": "Oversized bomber jacket",
         "description": "Oversized bomber jacket in a printed weave with embroidered details. Ribbed stand-up collar, press-studs down the front, dropped shoulders, long sleeves and diagonal front pockets with a concealed zip. Ribbing at the cuffs and hem. Lined.",
@@ -51,12 +47,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.6
+        "rating": 4.6,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08da"
-        },
         "type": "Jacket",
         "name": "Boxy puffer jacket",
         "description": "Boxy-style puffer jacket in woven fabric with a drawstring hood, zip down the front and zipped front pockets. Ribbing at the cuffs and an elasticated drawstring at the hem. Lined.",
@@ -78,12 +73,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.0
+        "rating": 4,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08db"
-        },
         "type": "Jacket",
         "name": "Quilted grape leather puffer jacket",
         "description": "Edition by John Boyega. An uncompromising collection made from more sustainable materials developed together with actor and innovator, John Boyega. This quilted puffer jacket is in Vegea\u2122 imitation leather, a material made from bio-waste produced during the winemaking process. The jacket has a stand-up collar, a zip and wind flap with press-studs down the front, fleece-lined front pockets with a press-stud and an inner pocket. Elasticated ribbing at the cuffs and a concealed elastic drawstring at the hem for an adjustable fit. The sleeves can be unzipped and detached to allow the jacket to be worn as a gilet. Lined.",
@@ -107,18 +101,74 @@
         "reviews": [
             {
                 "name": "ammar",
-                "reviewString": "Great Product!",
+                "reviewString": "ad",
+                "rating": 4,
                 "_id": {
-                    "$oid": "61b47abaa66c7ec7d5b127ce"
+                    "$oid": "61d00060eb01326b17d733e0"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "asd",
+                "rating": 3,
+                "_id": {
+                    "$oid": "61d001f357ec254eebddff0f"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "asdf",
+                "rating": 4,
+                "_id": {
+                    "$oid": "61d0036b378e3a1c87a3ec47"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "asdf",
+                "rating": 4,
+                "_id": {
+                    "$oid": "61d0036f378e3a1c87a3ec50"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "as",
+                "rating": 4,
+                "_id": {
+                    "$oid": "61d003cb0ef682969ce37967"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "asdd",
+                "rating": 3,
+                "_id": {
+                    "$oid": "61d0042015f3851f8540289e"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "ds",
+                "rating": 2,
+                "_id": {
+                    "$oid": "61d0046a6f9c3b57e31025ab"
+                }
+            },
+            {
+                "name": "ammar",
+                "reviewString": "",
+                "rating": 0,
+                "_id": {
+                    "$oid": "61d01c566f9c3b57e3102984"
                 }
             }
         ],
-        "rating": 4.8
+        "rating": 3,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08dc"
-        },
         "type": "Jacket",
         "name": "Imitation suede biker jacket",
         "description": "Jacket in soft imitation suede with a diagonal zip down the front, notch lapels with press-studs and long sleeves with a zip at the cuffs. Diagonal, zipped chest pocket and side pockets, small flap coin pocket with a press-stud and one inner pocket. Lined.",
@@ -140,12 +190,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 2.4
+        "rating": 2.4,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08dd"
-        },
         "type": "Jacket",
         "name": "Lined corduroy jacket",
         "description": "Jacket in cotton corduroy with a soft, faux shearling lining. Buttons down the front, a yoke front and back, flap chest pockets with a button, and diagonal welt front pockets. Long sleeves with buttoned cuffs, and an adjustable tab at the sides of the hem.",
@@ -167,12 +216,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 2.0
+        "rating": 2,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08de"
-        },
         "type": "Sweatshirt",
         "name": "Zip-top sweatshirt",
         "description": "Top in sweatshirt fabric made from a cotton blend with a stand-up collar, zip at the top and a yoke front and back. Dropped shoulders and long sleeves with ribbed cuffs.",
@@ -194,12 +242,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.7
+        "rating": 4.7,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08df"
-        },
         "type": "Sweatshirt",
         "name": "Printed sweatshirt",
         "description": "Top in soft, printed sweatshirt fabric with a round neckline, dropped shoulders, long sleeves and ribbing around the neckline, cuffs and hem.",
@@ -221,12 +268,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 2.1
+        "rating": 2.1,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e0"
-        },
         "type": "Sweatshirt",
         "name": "Oversized sweatshirt",
         "description": "Oversized top in sweatshirt fabric made from a cotton blend with a ribbed stand-up collar, low dropped shoulders and long, wide sleeves. Ribbing around the cuffs and hem. Soft brushed inside.",
@@ -248,12 +294,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.9
+        "rating": 4.9,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e1"
-        },
         "type": "Sweatshirt",
         "name": "Relaxed Fit Sweatshirt",
         "description": "Relaxed-fit top in sweatshirt fabric made from a cotton blend with dropped shoulders and ribbing around the neckline, cuffs and hem. Soft brushed inside.",
@@ -275,12 +320,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.2
+        "rating": 4.2,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e2"
-        },
         "type": "Sweatshirt",
         "name": "THERMOLITE\u00ae Relaxed Fit sweatshirt",
         "description": "Top in sweatshirt fabric with a soft brushed inside. Relaxed fit with a round, rib-trimmed neckline, dropped shoulders, long sleeves and ribbing at the cuffs and hem. Made using THERMOLITE\u00ae technology, this product has been developed to keep you warm with minimum bulk and weight.",
@@ -324,12 +368,11 @@
                 }
             }
         ],
-        "rating": 4.9
+        "rating": 4.9,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e3"
-        },
         "type": "Sweatshirt",
         "name": "Printed sweatshirt",
         "description": "Top in sweatshirt fabric made from a cotton blend with a print motif. Round, rib-trimmed neckline, dropped shoulders, long sleeves and ribbing at the cuffs and hem. Soft brushed inside.",
@@ -351,12 +394,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.6
+        "rating": 4.6,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e4"
-        },
         "type": "Hoodie",
         "name": "Motif Detail Hoodie",
         "description": "Hoodie in sweatshirt fabric made from a cotton blend with a motif on the front and a soft brushed inside. Double-layered, drawstring hood, dropped shoulders, long sleeves and ribbing at the cuffs and hem.",
@@ -378,12 +420,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.2
+        "rating": 4.2,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e5"
-        },
         "type": "Hoodie",
         "name": "Zip-through hoodie",
         "description": "Zip-through hoodie in sweatshirt fabric. Lined, drawstring hood, a zip down the front, dropped shoulders, long sleeves and front pockets. Ribbing at the cuffs and hem. Soft brushed inside.",
@@ -405,12 +446,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.0
+        "rating": 4,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e6"
-        },
         "type": "Hoodie",
         "name": "Cropped hoodie",
         "description": "Cropped hoodie in soft, patterned sweatshirt fabric with a drawstring hood, dropped shoulders, long sleeves and ribbing at the cuffs and hem. Soft brushed inside.",
@@ -432,12 +472,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.4
+        "rating": 4.4,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e7"
-        },
         "type": "Hoodie",
         "name": "Relaxed Fit Hoodie",
         "description": "Hoodie in sweatshirt fabric made from a cotton blend. Relaxed fit with a lined, drawstring hood, long sleeves, kangaroo pocket and ribbing at the cuffs and hem. Soft brushed inside.",
@@ -459,12 +498,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.5
+        "rating": 4.5,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e8"
-        },
         "type": "Hoodie",
         "name": "Relaxed Fit Hoodie",
         "description": "Hoodie in soft faux shearling with a kangaroo pocket. Hood with an elastic drawstring, long sleeves with concealed elastication at the cuffs, and an elastic drawstring at the hem.",
@@ -486,12 +524,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.5
+        "rating": 4.5,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08e9"
-        },
         "type": "Hoodie",
         "name": "Hoodie",
         "description": "Long-sleeved hoodie in soft sweatshirt fabric with a kangaroo pocket, double-layered drawstring hood with a wrapover front, and ribbing at the cuffs and hem. Soft brushed inside.",
@@ -513,12 +550,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.4
+        "rating": 4.4,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08ea"
-        },
         "type": "Trousers",
         "name": "Velour joggers",
         "description": "Joggers in soft velour. High waist with covered elastication, pockets in the side seams and tapered legs with cuffed hems.",
@@ -540,12 +576,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.5
+        "rating": 4.5,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08eb"
-        },
         "type": "Trousers",
         "name": "Cable-knit wool-blend joggers",
         "description": "Joggers in a soft, cable-knit wool blend. High waist with covered elastication and a drawstring, and ribbed hems.",
@@ -567,12 +602,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.8
+        "rating": 4.8,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08ec"
-        },
         "type": "Trousers",
         "name": "Crease-leg straight satin trousers",
         "description": "Satin trousers with a high waist, zip fly and hook-and-eye fastening. Diagonal side pockets, fake back pockets and straight legs with creases.",
@@ -594,12 +628,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.5
+        "rating": 4.5,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08ed"
-        },
         "type": "Trousers",
         "name": "Cotton chinos Regular Fit",
         "description": "Chinos in stretch cotton twill with a zip fly and button, diagonal side pockets, a coin pocket and welt back pockets with a button. Regular Fit \u2013 a classic fit with good room for movement over the thighs and knees to create a comfortable, straight silhouette.",
@@ -621,12 +654,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.4
+        "rating": 4.4,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08ee"
-        },
         "type": "Trousers",
         "name": "Twill trousers Slim Fit",
         "description": "5-pocket trousers in washed stretch twill with a regular waist and zip fly. Slim fit which is relaxed over the thighs and tapers from the knees down for a relaxed, well-tailored look.",
@@ -648,12 +680,11 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.3
+        "rating": 4.3,
+        "quantity": 50,
+        "wishedQuantity": 0
     },
     {
-        "_id": {
-            "$oid": "61b4739d44fc94bba7db08ef"
-        },
         "type": "Trousers",
         "name": "Regular Fit Joggers",
         "description": "Joggers in sweatshirt fabric made from a cotton blend. Covered elastication and a drawstring at the waist, pockets in the side seams and ribbed hems. Soft brushed inside.",
@@ -675,6 +706,8 @@
             "XL"
         ],
         "reviews": [],
-        "rating": 4.7
+        "rating": 4.7,
+        "quantity": 50,
+        "wishedQuantity": 0
     }
 ]

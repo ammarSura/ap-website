@@ -28,6 +28,33 @@ export default function NavbarComp() {
   
   const [ db_state, setDbState ] = useState(false);
 
+  async function Check2(user1) {
+   
+    // const { user } = useAuth0();
+    
+    await fetch('/addUser', {
+        
+        method: 'POST',
+        body: JSON.stringify(
+            { 
+                user_name: user1.user_name,
+                first_name: user1.first_name, 
+                last_name: user1.last_name, 
+                birthday: user1.birthday, 
+                gender: user1.gender,
+                email: user1.email, 
+                addresses: user1.addresses, 
+                cart: user1.cart, 
+                orders: user1.orders, 
+                wishlist: user1.wishlist
+            }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+}
+
   useEffect ( () => {
 
     if (isAuthenticated) {
@@ -52,9 +79,9 @@ export default function NavbarComp() {
   
   if (isAuthenticated) {
     
-    if(db_state === false) {
+    if(!db_state ) {
       if (user.hasOwnProperty('given_name')) {
-        Check({
+        Check2({
           user_name: user.given_name + ' ' + user.family_name,
           first_name: user.given_name,
           last_name: user.family_name,
@@ -67,7 +94,7 @@ export default function NavbarComp() {
           wishlist: [],
         });
       } else {
-        Check({
+        Check2({
           user_name: 'User' + String(Math.floor((Math.random() * 10000))),
           first_name: '',
           last_name: '',
@@ -82,7 +109,7 @@ export default function NavbarComp() {
       }
       setDbState(true);
       
-      console.log('her', carter.user);
+      console.log('proxy');
     }
 
     console.log(user.hasOwnProperty('given_name'))
@@ -96,18 +123,18 @@ export default function NavbarComp() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Men" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/men/tshirts">Tshirts</NavDropdown.Item>
-              <NavDropdown.Item href="/men/jeans">Jeans</NavDropdown.Item>
+              <NavDropdown.Item href="/men/sweatshirts">Sweatshirts</NavDropdown.Item>
+              <NavDropdown.Item href="/men/jackets">Jackets</NavDropdown.Item>
               <NavDropdown.Item href="/men/trousers">Trousers</NavDropdown.Item>
-              <NavDropdown.Item href="/men/shirts">Shirts</NavDropdown.Item>
+              <NavDropdown.Item href="/men/hoodies">Hoodies</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/men">View All</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Women" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/women/tshirts">Tshirts</NavDropdown.Item>
-              <NavDropdown.Item href="/women/jeans">Jeans</NavDropdown.Item>
+              <NavDropdown.Item href="/women/sweatshirts">Sweatshirts</NavDropdown.Item>
+              <NavDropdown.Item href="/women/jackets">Jackets</NavDropdown.Item>
               <NavDropdown.Item href="/women/trousers">Trousers</NavDropdown.Item>
-              <NavDropdown.Item href="/women/shirts">Shirts</NavDropdown.Item>
+              <NavDropdown.Item href="/women/hoodies">Hoodies</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/women">View All</NavDropdown.Item>
             </NavDropdown>
@@ -120,17 +147,13 @@ export default function NavbarComp() {
           <Nav style={{marginRight:"5%"}}>
             <Nav.Item style={{marginRight:"10%"}}> 
               <Link to="/profile">
-                {/* <img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636476214/user_pjvppm.png" style={{
-              height: "30px"}}>
-                </img> */}
+                
                 <i class="far fa-user-circle" style={{fontSize: "2.5em", color: "#373738"}}></i>
               </Link>
             </Nav.Item>
             <Nav.Item style={{marginRight:"8%"}}>
               <Link to="/wishlist">
-                {/* <img src="https://res.cloudinary.com/dejzdjexf/image/upload/v1636477321/love_sdy3fm.png" style={{
-              height: "30px"
-            }}/> */}
+                
               <i class="far fa-heart" style={{fontSize: "2.5em", color: "#373738"}}></i>
             </Link>
             </Nav.Item>

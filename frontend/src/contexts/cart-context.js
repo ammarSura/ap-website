@@ -47,6 +47,8 @@ export function CartProvider({children}) {
             // setWishlist(result);
             // setWishlistLoading(true);
             console.log('user', result[0])
+            setUser(result[0]);
+            setUserLoading(true);
         });
     }
     
@@ -54,15 +56,15 @@ export function CartProvider({children}) {
     useEffect ( () => {
         if ( !isLoading ) {
             if( !userIsLoaded && isAuthenticated  ) {
-                setUser(user);
-                setUserLoading(true);
+                
+                fetchUser();
                 
 
             } else {
                 // console.log('oker', user.name);
                 if ( !cartIsLoaded && isAuthenticated) {
                     fetchCart();
-                    fetchUser();
+                    
                 }
         
                 if ( !wishlistIsLoaded && isAuthenticated) {

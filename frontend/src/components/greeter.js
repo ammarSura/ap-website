@@ -162,15 +162,25 @@ export default function Greeter(props) {
         
             return(
                 <div>
-                    <h3>Tell us about yourself</h3>
+                    <h2>Tell us about yourself</h2>
                     
-                    <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}>
+                    {/* <ul style={{listStyleType:"none", lineHeight: "10%" ,lineWidth: "10%"}}> */}
+
                     
-                    <li><input type="text" placeholder="Your Birthday" id="birthday"/></li>
-                    <li><input type="text" placeholder="Gender" id="gender"/></li>
-                    </ul> 
-    
-                    <button onClick={() => Butter2()}>Submit</button>
+                    
+                    <div style={{marginBottom: "1%"}}>
+                        Birthday: <input type="date" id="birthday" placeholder="Birthday"/>
+                    </div>
+                    <div style={{marginBottom: "1%"}}>
+                        Gender: <select placeholder="Gender" id="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div style={{marginBottom: "1%"}}>
+                        <button onClick={() => Butter2()}>Submit</button>
+                    </div>
                 </div>
             );
     }  

@@ -35,7 +35,7 @@ export default function Product() {
     const [ wishlistIsLoaded, setWishlistLoading ] = useState(false);
     const [ isLoaded, setLoading ] = useState(false);
     const [ maxStar, setMaxStar ] = useState(0);
-
+    const [ User, setUser ] = useState(null);
     const { user, isAuthenticated } = useAuth0();
     console.log('u', user);
 
@@ -113,7 +113,7 @@ export default function Product() {
         body: JSON.stringify(
             { 
               id: prod_id,
-              name: 'ammar' ,
+              name: User.user_name,
               reviewString: review,
               rating: maxStar,
 
@@ -123,23 +123,7 @@ export default function Product() {
         }
     })
 
-  //   await fetch('/addRating', {
-        
-  //     method: 'POST',
-  //     body: JSON.stringify(
-  //         { 
-  //           product_id: prod_id,
-  //           rating: maxStar ,
-            
-
-  //         }),
-  //     headers: {
-  //         'Content-Type': 'application/json'
-  //     }
-  // })
-
-
-    // carter.setCartLoading(false);
+  
     setMaxStar(0)
     document.getElementById('addReview').value = '';
     window.location.reload()
@@ -216,22 +200,12 @@ export default function Product() {
           console.log('okay')
           setCartLoading(carter.cartIsLoaded);
           setCart(carter.cart.cart);
+          setUser(carter.User)
         } 
-        // else {
-        //   for (let i = 0; i < cart.length; i++ ) {
-        //     // console.log('aok', cart[i])
-        //     if (prod_id===cart[i].product_id) {
-        //       // setAddedToCart("Added to Cart");
-        //       setQuantity(cart[i].quantity);
-        //       setSizes(cart[i].sizes);
-        //       // console.log('q', quantity);
-        //     }
-        //   }
-        // }
+        
         if ( !wishlistIsLoaded ) {
           setWishlistLoading(carter.wishlistIsLoaded);
           setWishlist(carter.wishlist.wishlist);
-          // console.log(carter.wishlist.wishlist)
           
         } else {
           console.log('wishie', wishlist);
@@ -314,9 +288,11 @@ export default function Product() {
                   
                     <h2>{product.name}</h2>
       
-                    <h3> {product.price} </h3>
+                    <h3> ₹ {product.price} </h3>
       
                     <p>{product.description}</p>
+
+                    <ProductCardWishlistComp style={{}}id={prod_id} wishlist={addedToWishlist}size={size}/>
                 
                     <div> 
       
@@ -344,7 +320,7 @@ export default function Product() {
                         </Button>
                       
                       
-                        <ProductCardWishlistComp style={{}}id={prod_id} wishlist={addedToWishlist}size={size}/>
+                        
                       
                       </div>
 

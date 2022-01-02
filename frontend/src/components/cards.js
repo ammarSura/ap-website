@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { CardGroup, Card,  } from "react-bootstrap";
-import {Link} from "react-router-dom";
 import "../App.css";
 
 
-export default class CardComp extends Component {
-    render() {
+export default function CardComp() {
       return (
         <div>
         <CardGroup style={{
@@ -38,6 +36,6 @@ export default class CardComp extends Component {
         </CardGroup>
         </div>
 
-      )
-    } 
+      );
+     
 } 

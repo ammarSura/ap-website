@@ -12,8 +12,9 @@ import PageDisplay from "../../../components/page-display";
 export default function WomenTrousers() {
   
 
-  '/search/women/trousers'
-    
+  return (
+    <PageDisplay string="/search/women/trousers"/>
+  );
 }
 
  

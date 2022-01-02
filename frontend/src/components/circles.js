@@ -5,8 +5,7 @@ import { Col, Image, Row} from "react-bootstrap";
 import "../App.css";
 
 
-export default class CirclesComp extends Component {
-    render() {
+export default function CirclesComp() {
       return (
         <Container>
             <Row>
@@ -55,5 +54,5 @@ export default class CirclesComp extends Component {
             </Row>
         </Container>
       ); 
-    }
+    
 }

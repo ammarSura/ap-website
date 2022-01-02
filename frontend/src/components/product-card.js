@@ -43,7 +43,7 @@ export default function ProductCardComp (props) {
               </Card.Title>}
 
               <Card.Text className="product-card-text">
-                  {props.price}  
+                ₹ {props.price}  
               </Card.Text>
               <Card.Text className="product-card-text">
                   {props.gender}

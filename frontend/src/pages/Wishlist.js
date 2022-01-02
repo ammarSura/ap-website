@@ -32,7 +32,8 @@ export default function Wishlist() {
     } else {
         // console.log(products.wishlist)
         return (
-          <div style={{marginTop: "15%"}}> 
+          <div style={{marginTop: "12.5%"}}> 
+              <h1 style={{marginLeft: "15%", marginBottom: "2.5%"}}>Wishlist</h1>
               {(products.wishlist.length > 0) ?
                <WishlistDisplayComp lst = {products.wishlist}/>
               :

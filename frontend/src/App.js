@@ -14,23 +14,20 @@ import ContactUs from "./pages/ContactUs"
 import Results from './pages/Results';
 import Men from './pages/products/Men/Men';
 import Women from './pages/products/Women/Women';
-import MenTshirts from './pages/products/Men/Men-Tshirts';
-import WomenTshirts from './pages/products/Women/Women-Tshirts';
-import MenJeans from './pages/products/Men/Men-Jeans';
-import WomenJeans from './pages/products/Women/Women-Jeans';
+import MenSweatshirts from './pages/products/Men/Men-Sweatshirts';
+import WomenSweatshirts from './pages/products/Women/Women-Sweatshirts';
+import MenJackets from './pages/products/Men/Men-Jackets';
+import WomenJackets from './pages/products/Women/Women-Jackets';
 import MenTrousers from './pages/products/Men/Men-Trousers';
 import WomenTrousers from './pages/products/Women/Women-Trousers';
-import MenShirts from './pages/products/Men/Men-Shirts';
-import WomenShirts from './pages/products/Women/Women-Shirts';
+import MenHoodies from './pages/products/Men/Men-Hoodies';
+import WomenHoodies from './pages/products/Women/Women-Hoodies';
 import Profile from './pages/Profile';
 import Product from './pages/Product';
 import Wishlist from './pages/Wishlist';
 import UserDetails from './pages/UserDetails';
-// import Autocomplete from './util/searchie';
-import Autocomplete from './util/auto';
 import Cart from './pages/Cart';
 import {CartProvider} from "./contexts/cart-context";
-import SearchBar from './components/search-bar';
 import Checkout from './pages/Checkout';
 
 
@@ -58,14 +55,14 @@ export default function App() {
         <Route exact path="/results/:term" element={<Results/>}/>
         <Route exact path="/men" element={<Men/>}/>
         <Route exact path="/women" element={<Women/>}/>
-        <Route exact path="/men/tshirts" element={<MenTshirts/>}/>
-        <Route exact path="/women/tshirts" element={<WomenTshirts/>}/>
-        <Route exact path="/men/jeans" element={<MenJeans/>}/>
-        <Route exact path="/women/jeans" element={<WomenJeans/>}/>
+        <Route exact path="/men/sweatshirts" element={<MenSweatshirts/>}/>
+        <Route exact path="/women/sweatshirts" element={<WomenSweatshirts/>}/>
+        <Route exact path="/men/jackets" element={<MenJackets/>}/>
+        <Route exact path="/women/jackets" element={<WomenJackets/>}/>
         <Route exact path="/men/trousers" element={<MenTrousers/>}/>
         <Route exact path="/women/trousers" element={<WomenTrousers/>}/>
-        <Route exact path="/men/shirts" element={<MenShirts/>}/>
-        <Route exact path="/women/shirts" element={<WomenShirts/>}/>
+        <Route exact path="/men/hoodies" element={<MenHoodies/>}/>
+        <Route exact path="/women/hoodies" element={<WomenHoodies/>}/>
         <Route exact path="/wishlist" element={<Wishlist/>}/>
         <Route exact path="/user-details" element={<UserDetails/>}/>
         <Route exact path="/cart" element={<Cart/>} />
